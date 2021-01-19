@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Projet Master | todo</title>
+    <script src="js/jspsych.js"></script>
+    <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <link rel="stylesheet" href="css/jspsych.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body></body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+
+    // definiting two different response scales that can be used.
+    var page_1_options = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
+    var page_2_options = ["Strongly Disagree", "Disagree", "Somewhat Disagree", "Neural", "Somewhat Agree", "Agree", "Strongly Agree"];
+
+    var multi_choice_block = {
+        type: 'survey-multi-choice',
+        questions: [
+            {prompt: "I like vegetables", name: 'Vegetables', options: page_1_options, required: true},
+            {prompt: "I like fruit", name: 'Fruit', options: page_2_options, required: false}
+        ],
+    };
+
+    var multi_choice_block_horizontal = {
+        type: 'survey-multi-choice',
+        questions: [
+            {prompt: "I like vegetables", options: page_1_options, required: true, horizontal: true,},
+            {prompt: "I like fruit", options: page_2_options, required: false, horizontal: true}
+        ],
+    };
+
+    function saveData(name, data){
+        $.ajax({
+            // url:'https://formspree.io/suterchristoph1@gmail.com',
+            url:'https://formspree.io/mbjpwdqq',
+            method:'POST',
+            data:{
+                name:name,
+                _replyto:"suterchristoph1+noreply@gmail.com",
+                email:"suterchristoph1+noreply@gmail.com",
+                data:data,
+                _subject:'Test-1 data',
+            },
+            dataType:"json",
+            success:function() {
+                console.log('success');
+                $('#formBlock').hide();
+                $('#thankyouBlock').show();
+            }
+
+        });
+    }
+
+    jsPsych.init({
+        timeline: [multi_choice_block, multi_choice_block_horizontal],
+        on_finish: function () {
+            jsPsych.data.displayData();
+            saveData("experiment_data", jsPsych.data.get().json(true));
+
+
+        }
+    });
+
+
+</script>
+</html>
