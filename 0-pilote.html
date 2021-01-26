@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Projet Master | Pilote</title>
+    <script src="js/jspsych.js"></script>
+    <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="plugins/jspsych-instructions.js"></script>
+    <script src="plugins/jspsych-survey-html-form.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+    <script src="plugins/jspsych-survey-likert.js"></script>
+    <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="css/jspsych.css">
+    <link rel="stylesheet" href="css/jspsych-custom-styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body></body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+    // LEA start
+
+    var einleitungfragen = {
+        type: 'instructions',
+        pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich einen Französisch-Wortschatztest lösen.</b> Du findest 84 Buchstabenfolgen, die wie französische Wörter aussehen. Aber nur einige dieser Folgen sind richtige französische Wörter. Bitte kreuze diejenigen Wörter an, die du kennst (oder du ziemlich sicher bist, dass es sich um ein französisches Wort handelt, auch wenn du die Bedeutung nicht genau kennst). Aber aufgepasst: Versuche nicht, Wörter anzukreuzen, die du nie gesehen hast, denn für Fehler gibt es Strafpunkte.<p>' +
+        '<p>Was musst du machen?<p> ' +
+        '<ol><li>Verbinde deine Kopfhörer.</li>' +
+        '<li>Höre das Wort.</li>' +
+        '<li>Falls du das Wort kennst, kreuzt du es an.</li>' +
+        '<li>Drücke dann weiter(prochain). </li></ol>' +
+        '<p><b>Beispiel 1</b>: Du kennst wahrscheinlich das Wort oui. Du kreuzt also ja an. <p>' +
+        '<p><b>Beispiel 2</b>: Das Wort favernais kennst du wahrscheinlich nicht. Du lässt das Kästchen leer und drückst weiter/prochain. <p>' +
+        '<p><b>Wichtig</b>: Du arbeitest alleine und ohne Hilfsmittel (also keinen Dictionnaire).<p>' +
+        '<p>Alles klar? Falls du Fragen hast, frage unbedingt bei deiner Lehrperson nach.<p></div>'
+        ],
+
+        show_clickable_nav: true,
+        button_label_previous: 'retour',
+        button_label_next: 'prochain',
+    };
+
+    var audioInstructions = {
+        timeline: [{
+            type: 'audio-button-response',
+            stimulus: function () {
+                return 'sound/mots-cibles/' + jsPsych.timelineVariable('audio', true);
+            },
+            prompt: function () {
+                return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
+                    'Kennst du dieses Wort?<br><br>';
+            },
+            choices: ['oui', 'non'],
+            response_allowed_while_playing: false
+        }],
+        // loop_function: loopFunction,
+        timeline_variables: motsCiblesFilmAll,
+        randomize_order: true
+    };
+
+    // LEA ENDE
+    jsPsych.init({
+        //LEA START
+        preload_audio: motsCiblesFilmAllPreload,
+        timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
+        //LEA ENDE
+        on_finish: function () {
+            jsPsych.data.displayData();
+            // saveData("experiment_data", jsPsych.data.get().json(true));
+        }
+    });
+
+
+</script>
+</html>

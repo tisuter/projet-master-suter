@@ -127,18 +127,19 @@ jsPsych.plugins["audio-button-response"] = (function() {
         buttons.push(trial.button_html);
       }
     }
+    var html = "";
+    if (trial.prompt !== null) {
+      html = trial.prompt;
+    }
 
-    var html = '<div id="jspsych-audio-button-response-btngroup">';
+    html += '<div id="jspsych-audio-button-response-btngroup">';
     for (var i = 0; i < trial.choices.length; i++) {
       var str = buttons[i].replace(/%choice%/g, trial.choices[i]);
+      //show prompt if there is one
       html += '<div class="jspsych-audio-button-response-button" style="cursor: pointer; display: inline-block; margin:'+trial.margin_vertical+' '+trial.margin_horizontal+'" id="jspsych-audio-button-response-button-' + i +'" data-choice="'+i+'">'+str+'</div>';
     }
 		html += '</div>';
 
-		//show prompt if there is one
-		if (trial.prompt !== null) {
-			html += trial.prompt;
-		}
 
 		display_element.innerHTML = html;
 

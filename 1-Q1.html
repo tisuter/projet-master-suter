@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Projet Master | Questionnaire 1</title>
+    <script src="js/jspsych.js"></script>
+    <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="plugins/jspsych-instructions.js"></script>
+    <script src="plugins/jspsych-survey-html-form.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+    <script src="plugins/jspsych-survey-likert.js"></script>
+    <script src="plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="css/jspsych.css">
+    <link rel="stylesheet" href="css/jspsych-custom-styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body></body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+    // LEA start
+
+    var einleitungfragen = {
+        type: 'instructions',
+        pages: ['<h2>Beantworte bitte folgende Fragen.<h2>'],
+        show_clickable_nav: true,
+        button_label_previous: 'retour',
+        button_label_next: 'prochain',
+    };
+
+    var sprache = {
+        type: 'survey-text',
+        questions: [
+            {
+                prompt: '<h2>Welche Sprachen (ausser Schweizerdeutsch) sprichst du zuhause? z.B. Französisch, Italienisch </h2>',
+                columns: 150,
+                required: false,
+                name: 'langue-eleve'
+            }
+        ],
+    };
+
+    var filmgewohnheitenOptions = ["nie", "1x pro Jahr", "1x pro Monat", "1x pro Woche", "täglich"];
+    var filmgewohnheiten = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Wie oft schaust du Filme, Serien oder TV auf FRANZÖSISCH?</h2>',
+                name: 'habitudes-film',
+                labels: filmgewohnheitenOptions,
+                required: true
+            },
+        ],
+    };
+
+    var kenntnisserieOptions = ["oui", "non"];
+    var kenntnisserie = {
+        type: 'survey-multi-choice',
+        questions: [
+            {
+                prompt: '<h2>Kennst du die Serie PlanCoeur?</h2>',
+                options: kenntnisserieOptions,
+                required: true, horizontal: true,
+            },
+        ],
+    };
+
+    var kenntnisplancoeurOptions = ["keine", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "alle"];
+    var kenntnisplancoeur = {
+        type: 'survey-multi-choice',
+        questions: [
+            {
+                prompt: '<h2>Wie viele Episoden von PlanCeour hast du schon geschaut?</h2>',
+                options: kenntnisplancoeurOptions,
+                required: true,
+                horizontal: true,
+            },
+        ],
+    };
+
+
+    // LEA ENDE
+
+
+    jsPsych.init({
+        //LEA START
+        timeline: [einleitung, nameklasse, einleitungfragen, sprache, filmgewohnheiten, kenntnisserie, kenntnisplancoeur, schlusssatzFragen],
+        //LEA ENDE
+        on_finish: function () {
+            jsPsych.data.displayData();
+            $("#jspsych-data-display").empty();
+            $("#jspsych-data-display").prepend('<h2><a href="1-A_A.html">Mache nun weiter mit Activité A.</a></h2>');
+            // saveData("experiment_data", jsPsych.data.get().json(true));
+        }
+    });
+
+
+</script>
+</html>
