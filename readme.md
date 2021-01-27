@@ -1,2 +1,1 @@
-Find the test here: 
-https://tisuter.github.io/projet-master-suter/
+Find the website here: https://tisuter.github.io/projet-master-suter/
