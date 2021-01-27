@@ -25,7 +25,7 @@
         type: 'instructions',
         pages: ['<h2>Beantworte bitte folgende Fragen.<h2>'],
         show_clickable_nav: true,
-        button_label_previous: 'retour',
+        allow_backward: false,
         button_label_next: 'prochain',
     };
 
@@ -39,6 +39,7 @@
                 name: 'langue-eleve'
             }
         ],
+        button_label: 'prochain >',
     };
 
     var filmgewohnheitenOptions = ["nie", "1x pro Jahr", "1x pro Monat", "1x pro Woche", "täglich"];
@@ -52,6 +53,7 @@
                 required: true
             },
         ],
+        button_label: 'prochain >',
     };
 
     var kenntnisserieOptions = ["oui", "non"];
@@ -64,6 +66,7 @@
                 required: true, horizontal: true,
             },
         ],
+        button_label: 'prochain >',
     };
 
     var kenntnisplancoeurOptions = ["keine", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "alle"];
@@ -77,6 +80,7 @@
                 horizontal: true,
             },
         ],
+        button_label: 'prochain >',
     };
 
 

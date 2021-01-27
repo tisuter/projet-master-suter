@@ -22,22 +22,25 @@
 
     var einleitungfragen = {
         type: 'instructions',
-        pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich einen Französisch-Wortschatztest lösen.</b> Du findest 84 Buchstabenfolgen, die wie französische Wörter aussehen. Aber nur einige dieser Folgen sind richtige französische Wörter. Bitte kreuze diejenigen Wörter an, die du kennst (oder du ziemlich sicher bist, dass es sich um ein französisches Wort handelt, auch wenn du die Bedeutung nicht genau kennst). Aber aufgepasst: Versuche nicht, Wörter anzukreuzen, die du nie gesehen hast, denn für Fehler gibt es Strafpunkte.<p>' +
+        pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich einen Französisch-Wortschatztest lösen.</b> Du findest 84 Buchstabenfolgen, ' +
+        'die wie französische Wörter aussehen. Aber nur einige dieser Folgen sind richtige französische Wörter. Bitte gib an, welche Wörter du kennst ' +
+        '(oder du ziemlich sicher bist, dass es sich um ein französisches Wort handelt, auch wenn du die Bedeutung nicht genau kennst). ' +
+        'Aber aufgepasst: Versuche nicht bei Wörtern OUI zu klicken, falls du sie noch nie gesehen hast, denn für Fehler gibt es Strafpunkte.<p>' +
         '<p>Was musst du machen?<p> ' +
         '<ol><li>Verbinde deine Kopfhörer.</li>' +
         '<li>Höre das Wort.</li>' +
-        '<li>Falls du das Wort kennst, kreuzt du es an.</li>' +
-        '<li>Drücke dann weiter(prochain). </li></ol>' +
-        '<p><b>Beispiel 1</b>: Du kennst wahrscheinlich das Wort oui. Du kreuzt also ja an. <p>' +
-        '<p><b>Beispiel 2</b>: Das Wort favernais kennst du wahrscheinlich nicht. Du lässt das Kästchen leer und drückst weiter/prochain. <p>' +
+        '<li>Falls du das Wort kennst, klicke OUI sonst NON.</li></ol>' +
+        '<b>Beispiel 1</b>: Du kennst wahrscheinlich das Wort <i>pomme</i>. Dann klicke also OUI an. <p>' +
+        '<p><b>Beispiel 2</b>: Das Wort <i>favernais</i> kennst du wahrscheinlich nicht. Dann klickst du NON an. <p>' +
         '<p><b>Wichtig</b>: Du arbeitest alleine und ohne Hilfsmittel (also keinen Dictionnaire).<p>' +
         '<p>Alles klar? Falls du Fragen hast, frage unbedingt bei deiner Lehrperson nach.<p></div>'
         ],
 
         show_clickable_nav: true,
-        button_label_previous: 'retour',
         button_label_next: 'prochain',
+        allow_backward: false,
     };
+
 
     var audioInstructions = {
         timeline: [{

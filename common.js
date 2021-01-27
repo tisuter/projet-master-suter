@@ -1,9 +1,21 @@
+var group = getParam("group")
+
+function getParam(param) {
+    let searchParams = new URLSearchParams(window.location.search)
+    if (searchParams.has(param)) {
+        return searchParams.get(param)
+    }
+    return '?'
+}
+
 var einleitung = {
     type: 'instructions',
-    pages: ['<h2>Bonjour! Hier bist du richtig bei Gruppe 1. Wenn du bereit bist, drücke weiter (prochain).</h2>'],
+    pages: function () {
+        return ['<h2>Bonjour! Hier bist du richtig bei Gruppe ' + group + '. Wenn du bereit bist, drücke weiter (prochain).</h2>'];
+    },
     show_clickable_nav: true,
-    button_label_previous: 'retour',
     button_label_next: 'prochain',
+    allow_backward: false,
 };
 
 var nameklasse = {
@@ -23,6 +35,7 @@ var nameklasse = {
             required: true
         }
     ],
+    button_label: 'prochain >',
 };
 
 
@@ -30,8 +43,8 @@ var schlusssatzUebung = {
     type: 'instructions',
     pages: ['<h2>Merci beaucoup! Du hast die Übungen erfolgreich abgeschlossen. Klicke nun auf beenden (terminer).<h2>'],
     show_clickable_nav: true,
-    button_label_previous: 'retour',
     button_label_next: 'terminer',
+    allow_backward: false,
 };
 
 
@@ -39,8 +52,8 @@ var schlusssatzFragen = {
     type: 'instructions',
     pages: ['<h2>Merci beaucoup! Du hast die Fragen erfolgreich beantwortet. Klicke nun auf beenden (terminer).<h2>'],
     show_clickable_nav: true,
-    button_label_previous: 'retour',
     button_label_next: 'terminer',
+    allow_backward: false,
 };
 
 
@@ -396,16 +409,14 @@ function saveData(name, data) {
         method: 'POST',
         data: {
             name: name,
-            _replyto: "suterchristoph1+noreply@gmail.com",
-            email: "suterchristoph1+noreply@gmail.com",
+            // _replyto: "suterchristoph1+noreply@gmail.com",
+            // email: "suterchristoph1+noreply@gmail.com",
             data: data,
-            _subject: 'Test-1 data',
+            group: group,
         },
         dataType: "json",
         success: function () {
             console.log('success');
-            $('#formBlock').hide();
-            $('#thankyouBlock').show();
         }
 
     });

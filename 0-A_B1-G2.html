@@ -27,7 +27,7 @@
         'Knopf: On y va!<br></div>'],
 
         show_clickable_nav: true,
-        button_label_previous: 'retour',
+        allow_backward: false,
         button_label_next: 'On y va',
     };
 
@@ -40,7 +40,7 @@
             },
             prompt: function () {
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
-                    'Klicke die richtige Lösung:<br><br>';
+                    'Klicke auf die richtige Lösung:<br><br>';
             },
             choices: function () {
                 return jsPsych.timelineVariable('solution', true);
