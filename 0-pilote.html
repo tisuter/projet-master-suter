@@ -68,7 +68,7 @@
         //LEA ENDE
         on_finish: function () {
             jsPsych.data.displayData();
-            // saveData("experiment_data", jsPsych.data.get().json(true));
+            sendData("0-pilote", jsPsych.data.get().json(true));
         }
     });
 

@@ -81,8 +81,8 @@
         timeline: [einleitung, nameklasse, einleitungfragen, filmGefallen, filmVerstanden, filmFranzoesischZukunft, schlusssatzFragen],
         //LEA ENDE
         on_finish: function () {
+            sendData("0-Q2", jsPsych.data.get().json(true));
             jsPsych.data.displayData();
-            // saveData("experiment_data", jsPsych.data.get().json(true));
         }
     });
 

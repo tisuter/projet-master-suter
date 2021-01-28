@@ -1,4 +1,5 @@
 var group = getParam("group")
+var klasse = getParam("class")
 
 function getParam(param) {
     let searchParams = new URLSearchParams(window.location.search)
@@ -402,7 +403,9 @@ const calculationsPreload = calculations.map(item => {
 });
 
 
-function saveData(name, data) {
+function sendData(name, data) {
+    /*
+    todo: activate send
     $.ajax({
         // url:'https://formspree.io/suterchristoph1@gmail.com',
         url: 'https://formspree.io/mbjpwdqq',
@@ -413,6 +416,7 @@ function saveData(name, data) {
             // email: "suterchristoph1+noreply@gmail.com",
             data: data,
             group: group,
+            klasse: klasse,
         },
         dataType: "json",
         success: function () {
@@ -420,4 +424,5 @@ function saveData(name, data) {
         }
 
     });
+     */
 }
