@@ -1,8 +1,11 @@
-var group = getParam("group")
-var klasse = getParam("class")
+var group = getParam("group");
+var klasse = getParam("class");
+
+//Disable or enable globally
+var responseAllowedWhilePlaying = true;
 
 function getParam(param) {
-    let searchParams = new URLSearchParams(window.location.search)
+    let searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has(param)) {
         return searchParams.get(param)
     }
@@ -148,9 +151,6 @@ let lexTaleAudioFiles = [
     {text: 'réporce', audio: '83-reporce.mp3'},
     {text: 'mignon', audio: '84-mignon.mp3'}
 ];
-
-
-['abgelehnt', 'bezahlt', 'es reicht', 'gefunden', 'isst', 'keine Sorge', 'klingelt', 'liegen', 'stehlen']
 
 let motsCiblesFilmB = [
     //Adjectifs adverbes conjonctions prépositions
@@ -384,7 +384,7 @@ const motsCiblesFilmAllPreload = motsCiblesFilmAll.map(item => {
     return "sound/mots-cibles/" + item.audio
 });
 
-numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100']
+numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100'];
 
 let calculations = [
     //Adjectifs adverbes conjonctions prépositions
@@ -402,27 +402,46 @@ const calculationsPreload = calculations.map(item => {
     return "sound/" + item.audio
 });
 
+function getForm(klasse, group) {
+    if (klasse.toLowerCase() === "3d" && group.toLowerCase() === "1") {
+    }
+    if (klasse.toLowerCase() === "3d" && group.toLowerCase() === "2") {
+    }
+    if (klasse.toLowerCase() === "3d" && group.toLowerCase() === "3") {
+    }
+    if (klasse.toLowerCase() === "2a" && group.toLowerCase() === "1") {
+    }
+    if (klasse.toLowerCase() === "2a" && group.toLowerCase() === "2") {
+    }
+    if (klasse.toLowerCase() === "2a" && group.toLowerCase() === "3") {
+    }
+
+    return "mbjpwdqq"
+}
+
 
 function sendData(name, data) {
-    /*
-    todo: activate send
+
+    var url =  'https://formspree.io/' + getForm(klasse, group);
+    //TODO: Activate send
+
     $.ajax({
         // url:'https://formspree.io/suterchristoph1@gmail.com',
-        url: 'https://formspree.io/mbjpwdqq',
+        url: url,
         method: 'POST',
         data: {
             name: name,
             // _replyto: "suterchristoph1+noreply@gmail.com",
             // email: "suterchristoph1+noreply@gmail.com",
             data: data,
-            group: group,
-            klasse: klasse,
+            _group: group,
+            _klasse: klasse,
         },
         dataType: "json",
         success: function () {
             console.log('success');
         }
-
+    
     });
-     */
+
 }

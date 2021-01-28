@@ -95,7 +95,7 @@
             jsPsych.data.displayData();
             sendData("1-Q1", jsPsych.data.get().json(true));
             $("#jspsych-data-display").empty();
-            $("#jspsych-data-display").prepend('<h2><a href="1-A_A.html">Mache nun weiter mit Activité A.</a></h2>');
+            $("#jspsych-data-display").prepend('<h2><a href="1-A_A.html?group=' + group + '&class=' + klasse + '">Mache nun weiter mit Activité A.</a></h2>');
         }
     });
 
