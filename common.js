@@ -424,7 +424,7 @@ function sendData(name, data) {
 
     var url =  'https://formspree.io/' + getForm(klasse, group);
     //TODO: Activate send
-
+/*
     $.ajax({
         // url:'https://formspree.io/suterchristoph1@gmail.com',
         url: url,
@@ -441,7 +441,7 @@ function sendData(name, data) {
         success: function () {
             console.log('success');
         }
-    
-    });
 
+    });
+*/
 }
