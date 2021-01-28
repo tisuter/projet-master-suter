@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Projet Master | Activité B1</title>
+    <script src="js/jspsych.js"></script>
+    <script src="plugins/jspsych-instructions.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+    <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="plugins/jspsych-image-button-response.js"></script>
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="css/jspsych.css">
+    <link rel="stylesheet" href="css/jspsych-custom-styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body></body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+    // LEA start
+
+    var einleitungfragenRotation = {
+        type: 'instructions',
+        pages: ['<dif class="left"><p>Du wirst gleich ein paar Konzentrationsübungen lösen. Schau dir die Bilder genau an. <b>Welche Drehung im Uhrzeiger- oder Gegenuhrzeigersinn ist möglich?</b> Klicke auf eine Antwort. </p>' +
+        '<p>Verstanden? Klicke auf Compris.</p></dif>'],
+        show_clickable_nav: true,
+        allow_backward: false,
+        button_label_next: 'Compris',
+    };
+
+    var einleitungfragenOdd = {
+        type: 'instructions',
+        pages: ['<dif class="left"><p>Du wirst gleich ein paar Konzentrationsübungen lösen. Schau dir die Bilder genau an. <b>Welches Bild passt nicht dazu?</b> Klicke auf eine Antwort. </p>' +
+        '<p>Verstanden? Klicke auf Compris.</p></dif>'],
+        show_clickable_nav: true,
+        allow_backward: false,
+        button_label_next: 'Compris',
+    };
+
+    let opions5 = ['A', 'B', 'C', 'D', 'E'];
+
+
+    let rotationImages = [
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/1.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/2.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/3.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/4.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/5.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/6.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/7.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/8.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/9.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/10.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/11.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/12.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/13.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/14.png', options: opions5},
+        {text: 'Welche Rotation ist möglich?', img: 'images/non-verbal-reasoning/rotation/15.png', options: opions5}
+    ];
+
+    let oddOnesImage = [
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/1.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/2.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/3.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/4.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/5.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/6.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/7.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/8.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/9.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/10.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/11.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/12.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/13.png', options: opions5},
+        {text: 'Welches Bild passt nicht?', img: 'images/non-verbal-reasoning/odd-one/14.png', options: opions5}
+    ];
+
+    const rotationImagesPreload = rotationImages.map(item => {
+        return item.img;
+    });
+    const oddOnesImagePreload = oddOnesImage.map(item => {
+        return item.img;
+    });
+
+    var rotationImagesButton = {
+        timeline: [{
+            type: 'image-button-response',
+            stimulus: jsPsych.timelineVariable('img'),
+            stimulus_width: 1000,
+            maintain_aspect_ratio: true,
+            prompt: function () {
+                return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>';
+            },
+            choices: function () {
+                return jsPsych.timelineVariable('options', true);
+            },
+        }],
+        // loop_function: loopFunction,
+        timeline_variables: rotationImages,
+    };
+
+    var oddOnesImagesButton = {
+        timeline: [{
+            type: 'image-button-response',
+            stimulus: jsPsych.timelineVariable('img'),
+            stimulus_width: 1000,
+            maintain_aspect_ratio: true,
+            prompt: function () {
+                return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>';
+            },
+            choices: function () {
+                return jsPsych.timelineVariable('options', true);
+            },
+        }],
+        // loop_function: loopFunction,
+        timeline_variables: oddOnesImage,
+    };
+
+    // LEA ENDE
+    jsPsych.init({
+        //LEA START
+        preload_images: rotationImagesPreload.concat(oddOnesImagePreload),
+        //todo
+        timeline: [einleitung, nameklasse, einleitungfragenRotation, rotationImagesButton, einleitungfragenOdd, oddOnesImagesButton, schlusssatzUebung],
+        //LEA ENDE
+        on_finish: function () {
+            jsPsych.data.displayData();
+            sendData("0-A-non-verbal-reasoning-rotation-odd", jsPsych.data.get().json(true));
+        }
+    });
+
+
+</script>
+</html>
