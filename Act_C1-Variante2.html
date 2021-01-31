@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Projet Master | Pilote</title>
+    <title>Projet Master | Activité C</title>
     <script src="js/jspsych.js"></script>
     <script src="js/scripts.min.js"></script>
     <script src="plugins/jspsych-instructions.js"></script>
@@ -18,28 +18,16 @@
 
 <script>
     // LEA start
-
     var einleitungfragen = {
         type: 'instructions',
-        pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich einen Französisch-Wortschatztest lösen.</b> Du findest 84 Buchstabenfolgen, ' +
-        'die wie französische Wörter aussehen. Aber nur einige dieser Folgen sind richtige französische Wörter. Bitte gib an, welche Wörter du kennst ' +
-        '(oder du ziemlich sicher bist, dass es sich um ein französisches Wort handelt, auch wenn du die Bedeutung nicht genau kennst). ' +
-        'Aber aufgepasst: Versuche nicht bei Wörtern OUI zu klicken, falls du sie noch nie gesehen hast, denn für Fehler gibt es Strafpunkte.<p>' +
-        '<p>Was musst du machen?<p> ' +
-        '<ol><li>Verbinde deine Kopfhörer.</li>' +
-        '<li>Höre das Wort.</li>' +
-        '<li>Falls du das Wort kennst, klicke OUI sonst NON.</li></ol>' +
-        '<b>Beispiel 1</b>: Du kennst wahrscheinlich das Wort <i>pomme</i>. Dann klicke also OUI an. <p>' +
-        '<p><b>Beispiel 2</b>: Das Wort <i>favernais</i> kennst du wahrscheinlich nicht. Dann klickst du NON an. <p>' +
-        '<p><b>Wichtig</b>: Du arbeitest alleine und ohne Hilfsmittel (also keinen Dictionnaire).<p>' +
-        '<p>Alles klar? Falls du Fragen hast, frage unbedingt bei deiner Lehrperson nach.<p></div>'
+        pages: ['<div class="left">Du hörst gleich ein französisches Wort. Klicke es auf der Liste an. Klicke dann weiter, um das nächste Wort zu hören etc. Verbinde also deinen Kopfhörer und los geht’s. Klick auf Los geht’s.</div>',
+            'In den nächsten Übungen siehst du dieselben Wörter. Klicke auf die korrekte Übersetzung.'
         ],
 
         show_clickable_nav: true,
-        button_label_next: 'prochain',
         allow_backward: false,
+        button_label_next: 'Los geht’s',
     };
-
 
     var audioInstructions = {
         timeline: [{
@@ -49,27 +37,29 @@
             },
             prompt: function () {
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
-                    'Kennst du dieses Wort?<br><br>';
+                    'Klicke auf die Übersetzung:<br><br>';
             },
-            choices: ['oui', 'non'],
+            choices: function () {
+                return jsPsych.timelineVariable('translation', true);
+            },
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
         // loop_function: loopFunction,
-        timeline_variables: motsCiblesFilmAll,
-        randomize_order: true
+        timeline_variables: motsCiblesFilmCVar2,
     };
 
     // LEA ENDE
     jsPsych.init({
         //LEA START
-        preload_audio: motsCiblesFilmAllPreload,
+        preload_audio: motsCiblesFilmCVar2Preload,
         timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
         //LEA ENDE
         on_finish: function () {
             jsPsych.data.displayData();
-            sendData("Pilote", jsPsych.data.get().json(true));
+            sendData("Act_C1-Variante2", jsPsych.data.get().json(true));
         }
     });
+
 
 </script>
 </html>

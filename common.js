@@ -365,7 +365,120 @@ let motsCiblesFilmD = [
     {text: "taf", audio: "03-taf.m4a"},
     {text: "tellement", audio: "03-tellement.m4a"}
 ];
+var b1Adjectifs = ['verrückt', 'verliebt', 'widerlich', 'übrigens', 'manchmal', 'draussen', 'ehrlich', 'ansonsten', 'in der Art/so', 'vor(her)', 'gelb', 'neben', 'selten'];
+var b1NomPl = ['die Schlüssel', 'die Einkäufe', 'die Kinder', 'die Schuhe'];
+var b1NomSg = ['eine Gemeinschaftskasse', 'eine Schwere', 'ein Typ', 'ein Topf'];
+var b1VerbesIndef = ['gefunden', 'bezahlt', 'abgelehnt', 'auserwählt'];
+var b1VerbesConjug = ['es reicht', 'es klingelt', 'man isst', 'Halt’s Maul', 'keine Sorge', 'es schneit', 'man träumt'];
+
+let motsCiblesFilmBVar2 = [
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'fou', audio: '01-fou.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'amoureuse', audio: '01-amoureuse.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'dégueulasse', audio: '01-degueulasse.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'd’ailleurs', audio: '01-ailleurs.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'parfois', audio: '01-parfois.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'dehors', audio: '01-dehors.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'franchement', audio: '01-franchement.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'sinon', audio: '01-sinon.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'genre', audio: '01-genre.m4a'},
+    {type: 'adjectifs&co', translation: b1Adjectifs, text: 'avant', audio: '01-avant.m4a'},
+
+    {type: 'nomPl', translation: b1NomPl, text: 'des clés', audio: '01-cles.m4a'},
+    {type: 'nomPl', translation: b1NomPl, text: 'des courses', audio: '01-courses.m4a'},
+    {type: 'nomPl', translation: b1NomPl, text: 'des gosses', audio: '01-gosses.m4a'},
+
+    {type: 'nomSg', translation: b1NomSg, text: 'une cagnotte', audio: '01-cagnotte.m4a'},
+    {type: 'nomSg', translation: b1NomSg, text: 'une lourdeur', audio: '01-lourdeur.m4a'},
+    {type: 'nomSg', translation: b1NomSg, text: 'un mec', audio: '01-mec.m4a'},
+
+    {type: 'verbesIndef', translation: b1VerbesIndef, text: 'trouvé', audio: '01-trouve.m4a'},
+    {type: 'verbesIndef', translation: b1VerbesIndef, text: 'payé', audio: '01-paye.m4a'},
+    {type: 'verbesIndef', translation: b1VerbesIndef, text: 'refusée', audio: '01-refusee.m4a'},
+
+    {type: 'verbesConjug', translation: b1VerbesConjug, text: 'ça suffit', audio: '01-suffit.m4a'},
+    {type: 'verbesConjug', translation: b1VerbesConjug, text: 'ça sonne', audio: '01-sonne.m4a'},
+    {type: 'verbesConjug', translation: b1VerbesConjug, text: 'ça se bouffe', audio: '01-bouffe.m4a'},
+    {type: 'verbesConjug', translation: b1VerbesConjug, text: 'ta gueule', audio: '01-gueule.m4a'},
+    {type: 'verbesConjug', translation: b1VerbesConjug, text: 't’inquiète', audio: '01-inquiete.m4a'},
+];
+
+var c1Adjectifs = ['verschwommen', 'allerletzte', 'schmutzig', 'falls/so/doch', 'noch', 'nie', 'denn', 'ausser', 'defekt', 'ohne', 'keine'];
+var c1NomPl = ['die Hackfleischbällchen', 'die Dummheiten', 'die Schränke'];
+var c1NomSg = ['ein Ort', 'ein Tropfen', 'eine Kacke', 'ein Freund', 'ein Vertrauen', 'ein Ding', 'eine Tüte', 'eine Gabel'];
+var c1VerbesIndef = ['ich gestehe', 'du meinst', 'keine Sorge', 'ihr verheimlicht', 'es ist uns egal', 'ihr verräumt', 'ich zünde an', 'wir lachen'];
+var c1VerbesConjug = ['(an)lügen', 'versende', 'leite weiter', 'getötet', 'aussteigen', 'geschlagen'];
+
+let motsCiblesFilmCVar2 = [
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'flou', audio: '02-flou.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'ultime', audio: '02-ultime.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'sale', audio: '02-sale.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'encore', audio: '02-encore.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'jamais', audio: '02-jamais.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'car', audio: '02-car.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'si', audio: '02-si.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'sauf', audio: '02-sauf.m4a'},
+
+    { type: 'nomPl', translation: c1NomPl, text: 'des boulettes', audio: '02-boulettes.m4a'},
+    { type: 'nomPl', translation: c1NomPl, text: 'des conneries', audio: '02-conneries.m4a'},
+
+    { type: 'nomSg', translation: c1NomSg, text: 'un endroit', audio: '02-endroit.m4a'},
+    { type: 'nomSg', translation: c1NomSg, text: 'une goutte', audio: '02-goutte.m4a'},
+    { type: 'nomSg', translation: c1NomSg, text: 'une crotte', audio: '02-crotte.m4a'},
+    { type: 'nomSg', translation: c1NomSg, text: 'un pote', audio: '02-pote.m4a'},
+    { type: 'nomSg', translation: c1NomSg, text: 'une confiance', audio: '02-confiance.m4a'},
+    { type: 'nomSg', translation: c1NomSg, text: 'un truc', audio: '02-truc.m4a'},
+
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'j’avoue', audio: '02-avoue.m4a'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'tu crois', audio: '02-crois.m4a'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 't’inquiète', audio: '02-inquiete.m4a'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'vous cachez', audio: '02-cachez.m4a'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'on s’en fout', audio: '02-fout.m4a'},
+
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'mentir', audio: '02-mentir.m4a'},
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'envoie', audio: '02-envoie.m4a'},
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'transfère', audio: '02-transfere.m4a'},
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'tué', audio: '02-tue.m4a'}
+];
+var d1Adjectifs = ['ernst', 'neugierig', 'mühsam', 'bereit', 'jetzt', 'so/derart', 'nichts', 'aber', 'mit', 'scheu', 'gestern', 'fast'];
+var d1NomPl = ['ein Kinderwagen', 'eine Plage', 'eine Arbeit', 'ein Geschenk', 'ein Kleid', 'eine Arbeit', 'ein Sattel', 'ein Kabel'];
+var d1NomSg = ['die Paten', 'die Klamotten', 'die Rinder'];
+var d1VerbesIndef = ['helfen', 'ähnlich sehen', '(ver)senden', 'warte', 'hör auf', 'tut mir leid', 'gestreckt', 'kaufen'];
+var d1VerbesConjug = ['ich zahle zurück', 'ich kann', 'ich leihe aus'];
+
+let motsCiblesFilmDVar2 = [
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'sérieux', audio: '03-serieux.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'curieuse', audio: '03-curieuse.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'chiante', audio: '03-chiante.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'prête', audio: '03-prete.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'maintenant', audio: '03-maintenant.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'tellement', audio: '03-tellement.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'rien', audio: '03-rien.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'mais', audio: '03-mais.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'avec', audio: '03-avec.m4a' },
+
+    { type: 'nomPl', translation: d1NomPl, text: 'une poussette', audio: '03-poussette.m4a' },
+    { type: 'nomPl', translation: d1NomPl, text: 'une plaie', audio: '03-plaie.m4a' },
+    { type: 'nomPl', translation: d1NomPl, text: 'un taf', audio: '03-taf.m4a' },
+    { type: 'nomPl', translation: d1NomPl, text: 'un cadeau', audio: '03-cadeau.m4a' },
+    { type: 'nomPl', translation: d1NomPl, text: 'une robe', audio: '03-robe.m4a' },
+    { type: 'nomPl', translation: d1NomPl, text: 'un boulot', audio: '03-boulot.m4a' },
+
+    { type: 'nomSg', translation: d1NomSg, text: 'des parrains', audio: '03-parrains.m4a' },
+    { type: 'nomSg', translation: d1NomSg, text: 'des fringues', audio: '03-fringues.m4a' },
+
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'aider', audio: '03-aider.m4a' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'ressembler', audio: '03-ressembler.m4a' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'envoyer', audio: '03-envoyer.m4a' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'attends', audio: '03-attends.m4a' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'arrête', audio: '03-arrete.m4a' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'désolé', audio: '03-desole.m4a' },
+
+    { type: 'verbesConjug', translation: d1VerbesConjug, text: 'je rembourse', audio: '03-rembourser.m4a' },
+    { type: 'verbesConjug', translation: d1VerbesConjug, text: 'je peux', audio: '03-peux.m4a' }
+];
+
 const motsCiblesFilmAll = motsCiblesFilmB.concat(motsCiblesFilmC).concat(motsCiblesFilmD);
+const motsCiblesFilmAllVar2 = motsCiblesFilmBVar2.concat(motsCiblesFilmCVar2).concat(motsCiblesFilmDVar2);
 
 const lexTaleAudioFilesPreload = lexTaleAudioFiles.map(item => {
     return "sound/LexTale/" + item.audio
@@ -379,28 +492,24 @@ const motsCiblesFilmCPreload = motsCiblesFilmC.map(item => {
 const motsCiblesFilmDPreload = motsCiblesFilmD.map(item => {
     return "sound/mots-cibles/" + item.audio
 });
-
 const motsCiblesFilmAllPreload = motsCiblesFilmAll.map(item => {
     return "sound/mots-cibles/" + item.audio
 });
 
-numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100'];
-
-let calculations = [
-    //Adjectifs adverbes conjonctions prépositions
-    {type: "calc", text: "3 + 4 =", audio: "hammer.mp3", solution: numbers},
-    {type: "calc", text: "7 + 11 =", audio: "hammer.mp3", solution: numbers},
-    {type: "calc", text: "37-5 =", audio: "hammer.mp3", solution: numbers},
-    {type: "calc", text: "92-6 =", audio: "hammer.mp3", solution: numbers},
-    {type: "calc", text: "5x3 =", audio: "hammer.mp3", solution: numbers},
-    {type: "calc", text: "2x12 =", audio: "hammer.mp3", solution: numbers},
-    {type: "calc", text: "16:4=", audio: "hammer.mp3", solution: numbers},
-    {type: "calc", text: "33:11=", audio: "hammer.mp3", solution: numbers}
-];
-
-const calculationsPreload = calculations.map(item => {
-    return "sound/" + item.audio
+const motsCiblesFilmBVar2Preload = motsCiblesFilmBVar2.map(item => {
+    return "sound/mots-cibles/" + item.audio
 });
+const motsCiblesFilmCVar2Preload = motsCiblesFilmCVar2.map(item => {
+    return "sound/mots-cibles/" + item.audio
+});
+const motsCiblesFilmDVar2Preload = motsCiblesFilmDVar2.map(item => {
+    return "sound/mots-cibles/" + item.audio
+});
+const motsCiblesFilmAllVar2Preload = motsCiblesFilmAllVar2.map(item => {
+    return "sound/mots-cibles/" + item.audio
+});
+
+numbers = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
 
 function getForm(klasse, group) {
     if (klasse.toLowerCase() === "3d" && group.toLowerCase() === "1") {

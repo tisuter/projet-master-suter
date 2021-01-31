@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Projet Master | Activité B1</title>
     <script src="js/jspsych.js"></script>
+    <script src="js/scripts.min.js"></script>
     <script src="plugins/jspsych-instructions.js"></script>
     <script src="plugins/jspsych-survey-text.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
@@ -14,8 +15,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body></body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <script>
     // LEA start
@@ -30,6 +29,76 @@
         allow_backward: false,
         button_label_next: 'On y va',
     };
+
+    let calculations = [
+        //Adjectifs adverbes conjonctions prépositions
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "23 + 4 + 39 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "15 + 27 + 36 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "25 + 3 + 5 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "9 + 7 + 37 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "6 + 34 + 14 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "31 + 38 + 2 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "33 + 32 + 19 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "3 + 14 + 19 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "29 + 22 + 8 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "28 + 39 + 25 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "27 + 21 + 3 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "26 + 3 + 8 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "11 + 27 + 21 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "8 + 33 + 21 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "24 + 34 + 18 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "31 + 16 + 20 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "37 - 16 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "55 - 8 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "47 - 26 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "38 - 21 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "48 - 37 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "10 - 9 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "29 - 3 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "33 - 2 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "56 - 10 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "60 - 35 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "44 - 16 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "15 - 8 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "60 - 22 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "62 - 24 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "40 - 20 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "61 - 12 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "18 x 2 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "7 x 5 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "16 x 4 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "4 x 4 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "4 x 17 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "13 x 2 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "12 x 8 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "4 x 9 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "1 x 7 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "20 x 2 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "10 x 9 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "3 x 11 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "9 x 7 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "6 x 16 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "7 x 6 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "19 x 5 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "14 : 7 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "24 : 6 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "45 : 5 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "39 : 3 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "64 : 8 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "90 : 6 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "76 : 4 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "99 : 9 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "63 : 9 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "81 : 9 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "42 : 3 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "96 : 6 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "68 : 4 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "42 : 6 ="},
+        {type: "calc", audio: "hammer.mp3", solution: numbers, text: "85 : 5 ="}
+        ]
+    const calculationsPreload = calculations.map(item => {
+        return "sound/" + item.audio
+    });
 
 
     var audioInstructions = {
@@ -48,6 +117,7 @@
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
         timeline_variables: calculations,
+        randomize_order: true
     };
 
     // LEA ENDE
