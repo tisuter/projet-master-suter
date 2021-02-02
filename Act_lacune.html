@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Projet Master | Activité B</title>
+    <script src="js/jspsych.js"></script>
+    <script src="js/scripts.min.js"></script>
+    <script src="plugins/jspsych-instructions.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+    <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="plugins/jspsych-html-button-response.js"></script>
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="css/jspsych.css">
+    <link rel="stylesheet" href="css/jspsych-custom-styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body></body>
+
+<script>
+    // LEA start
+    var einleitungfragen = {
+        type: 'instructions',
+        pages: ['<dif class="left"><p>Finde den fehlenden Buchstaben, der für beide Wörter passt. Klicke auf den entsprechenden Buchstaben.. Bereit? Klicke auf On y va.</p></dif>'],
+
+        show_clickable_nav: true,
+        allow_backward: false,
+        button_label_next: 'On y va',
+    };
+
+    let choices1 = ['a', 'b', 'c', 'é', 'f', 'g', 'h', 'j', 'l', 'm', 'p', 'r', 's', 't', 'v']
+    let lacune1Questions = [
+        { word: 'bon_our, &nbsp;&nbsp;&nbsp; _e', solution: 'j'},
+        { word: 're_arde, &nbsp;&nbsp;&nbsp; man_er', solution: 'g'},
+        { word: 'beaucou_, &nbsp;&nbsp;&nbsp; _omme', solution: 'p'},
+        { word: 'é_outer, &nbsp;&nbsp;&nbsp; _ourir', solution: 'c'},
+        { word: '_ivre, &nbsp;&nbsp;&nbsp; _ire', solution: 'l'},
+        { word: 'soeu_r, &nbsp;&nbsp;&nbsp; pa_ler', solution: 'r'},
+        { word: '_amille, &nbsp;&nbsp;&nbsp; _aux', solution: 'f'},
+        { word: 'de_oirs, &nbsp;&nbsp;&nbsp; au re_oir', solution: 'v'},
+        { word: 'ca_ier, &nbsp;&nbsp;&nbsp; _ôpital', solution: 'h'},
+        { word: 'm_ison, &nbsp;&nbsp;&nbsp; p_rdon', solution: 'a'},
+        { word: '_alut, &nbsp;&nbsp;&nbsp; dan_er', solution: 's'},
+        { word: '_cole, &nbsp;&nbsp;&nbsp; _lève', solution: 'é'},
+        { word: '_riste, &nbsp;&nbsp;&nbsp; mon_er', solution: 't'},
+        { word: '_er, &nbsp;&nbsp;&nbsp; Alle_agne', solution: 'm'},
+        { word: '_anque, &nbsp;&nbsp;&nbsp; _on', solution: 'b'},
+    ];
+
+    let choices2 = ['b', 'c', 'd', 'f', 'g', 'h', 'i', 'I', 'm', 'p', 'q', 's', 't', 'u', 'x']
+    let lacune2Questions = [
+        { word: '_arfait, &nbsp;&nbsp;&nbsp; _artir', solution: 'p'},
+        { word: 'c_anter, &nbsp;&nbsp;&nbsp; _ôtel', solution: 'h'},
+        { word: 'pour_uoi, &nbsp;&nbsp;&nbsp; _and', solution: 'q'},
+        { word: '_ère, , &nbsp;&nbsp;&nbsp; ca_embert', solution: 'm'},
+        { word: '_omme, &nbsp;&nbsp;&nbsp; _énial', solution: 'g'},
+        { word: 'tou_, &nbsp;&nbsp;&nbsp; _ouvent', solution: 's'},
+        { word: 'h_er, &nbsp;&nbsp;&nbsp; hu_t', solution: 'i'},
+        { word: 'te_te, &nbsp;&nbsp;&nbsp; di_', solution: 'x'},
+        { word: '_oisirs, &nbsp;&nbsp;&nbsp; sa_uer', solution: 'l'},
+        { word: 's_per, &nbsp;&nbsp;&nbsp; de_x', solution: 'u'},
+        { word: '_leur, &nbsp;&nbsp;&nbsp; _aim', solution: 'f'},
+        { word: 'or_inateur, &nbsp;&nbsp;&nbsp; ma_ame', solution: 'd'},
+        { word: 'pe_it, &nbsp;&nbsp;&nbsp; _résor', solution: 't'},
+        { word: 'gla_e, &nbsp;&nbsp;&nbsp; pla_e', solution: 'c'},
+        { word: '_illet, &nbsp;&nbsp;&nbsp; a_ricot', solution: 'b'}
+    ];
+
+    var lacune1 = {
+        timeline: [{
+            type: 'html-button-response',
+            stimulus: function () {
+                return "<h2>" + jsPsych.timelineVariable('word', true) + "</h2>";
+            },
+            choices: choices1,
+            prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
+        }],
+        timeline_variables: lacune1Questions,
+    };
+    var lacune2 = {
+        timeline: [{
+            type: 'html-button-response',
+            stimulus: function () {
+                return "<h2>" + jsPsych.timelineVariable('word', true) + "</h2>";
+            },
+            choices: choices2,
+            prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
+        }],
+        timeline_variables: lacune2Questions,
+    };
+
+    // LEA ENDE
+    jsPsych.init({
+        //LEA START
+        timeline: [einleitung, nameklasse, einleitungfragen, lacune1, lacune2, schlusssatzUebung],
+        //LEA ENDE
+        on_finish: function () {
+            jsPsych.data.displayData();
+            sendData("Act_B1-Variante2", jsPsych.data.get().json(true));
+        }
+    });
+
+
+</script>
+</html>
