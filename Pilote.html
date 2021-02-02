@@ -41,6 +41,7 @@
     };
 
 
+    let yesNo = ['oui', 'non'];
     var audioInstructions = {
         timeline: [{
             type: 'audio-button-response',
@@ -51,7 +52,12 @@
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
                     'Kennst du dieses Wort?<br><br>';
             },
-            choices: ['oui', 'non'],
+            on_finish: function(data){
+                data.frenchWord = jsPsych.timelineVariable('text', true);
+                data.textKnown = yesNo[data.button_pressed];
+            },
+
+            choices: yesNo,
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
         // loop_function: loopFunction,

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Projet Master | Activité A</title>
     <script src="js/jspsych.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="plugins/jspsych-instructions.js"></script>
     <script src="plugins/jspsych-survey-text.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
@@ -39,6 +39,7 @@
         allow_backward: false,
     };
 
+    let yesNo = ['oui', 'non'];
     var audioInstructions = {
         timeline: [{
             type: 'audio-button-response',
@@ -49,9 +50,14 @@
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
                     'Kennst du dieses Wort?<br><br>';
             },
-            choices: ['oui', 'non'],
-            response_allowed_while_playing: responseAllowedWhilePlaying
+            choices: yesNo,
+            response_allowed_while_playing: responseAllowedWhilePlaying,
+            on_finish: function(data){
+                data.frenchWord = jsPsych.timelineVariable('text', true);
+                data.textKnown = yesNo[data.button_pressed];
+            },
         }],
+
         // loop_function: loopFunction,
         timeline_variables: lexTaleAudioFiles,
     };

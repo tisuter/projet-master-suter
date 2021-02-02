@@ -30,15 +30,21 @@ var nameklasse = {
                 '<p> Hinweis: Bitte gib deinen Namen so an: erste zwei Buchstaben deines Vornamens, erste zwei Buchstaben deines Nachnamens, also so: Anna Roggo = AnRo</p>',
             columns: 4,
             required: true,
-            name: 'nom-eleve'
+            name: 'nomEleve'
         },
         {
             prompt: 'Klasse',
             columns: 2,
-            name: 'classe-eleve',
+            name: 'classeEleve',
             required: true
         }
     ],
+    on_finish: function(data){
+        var jsonData = JSON.parse(data.responses);
+        data.nomEleve = jsonData.nomEleve;
+        data.classeEleve = jsonData.classeEleve;
+        return;
+    },
     button_label: 'prochain >',
 };
 
