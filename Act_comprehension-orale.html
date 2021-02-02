@@ -20,7 +20,7 @@
     // LEA start
     var einleitungfragen = {
         type: 'instructions',
-        pages: ['<dif class="left"><p>Verbinde deinen Kopfhörer. Du hörst nun ein Telefongespräch, in dem es um einen Schwimmkurs geht. Höre den Text und beantworte die Fragen. Bereit? Klicke auf On y va.</p></dif>'],
+        pages: ['<div class="left"><p>Verbinde deinen Kopfhörer. Du hörst nun ein Telefongespräch, in dem es um einen Schwimmkurs geht. Höre den Text und beantworte die Fragen. Bereit? Klicke auf On y va.</p></div>'],
         show_clickable_nav: true,
         allow_backward: false,
         button_label_next: 'On y va',
@@ -60,7 +60,7 @@
         var pos = item.question.indexOf(".")
         var name = 'q' + item.question.substr(0, pos - 1)
         return {
-            prompt: '<h1></h1><dif class="left"><p>' + item.question + '</p></dif>',
+            prompt: '<h1></h1><div class="left"><p>' + item.question + '</p></div>',
             columns: 20,
             required: true,
             name: +name,
@@ -80,21 +80,21 @@
 
     var einleitungQuest1 = {
         type: 'instructions',
-        pages: ['<h1>Lis les questions.</h1><dif class="left">' + quest1Text.join("") + '</dif>'],
+        pages: ['<h1>Lis les questions.</h1><div class="left">' + quest1Text.join("") + '</div>'],
         show_clickable_nav: true,
         allow_backward: false,
         button_label_next: 'On y va',
     };
     var einleitungQuest2 = {
         type: 'instructions',
-        pages: ['<h1>Lis les questions.</h1><dif class="left">' + quest2Text.join("") + '</dif>'],
+        pages: ['<h1>Lis les questions.</h1><div class="left">' + quest2Text.join("") + '</div>'],
         show_clickable_nav: true,
         allow_backward: false,
         button_label_next: 'On y va',
     };
     var einleitungQuest3 = {
         type: 'instructions',
-        pages: ['<h1>Lis les questions.</h1><dif class="left">' + quest3Text.join("") + '</dif>'],
+        pages: ['<h1>Lis les questions.</h1><div class="left">' + quest3Text.join("") + '</div>'],
         show_clickable_nav: true,
         allow_backward: false,
         button_label_next: 'On y va',
@@ -106,7 +106,7 @@
             stimulus: 'sound/comprehension-orale/cours-de-natation-1.mp3',
             prompt: '<h1>Écoute.</h1>' +
                     'Merke dir die Antworten! Klicke erst auf "prochain", wenn du den Text gehört hast. Die Antworten musst du zu einem späteren Zeitpunkt eingeben.' +
-                '<dif class="left">' + quest1Text.join("") + '</dif>',
+                '<div class="left">' + quest1Text.join("") + '</div>',
             choices: ['prochain', 'répéter'],
             // response_allowed_while_playing: false,
         }],
@@ -118,7 +118,7 @@
             stimulus: 'sound/comprehension-orale/cours-de-natation-2.mp3',
             prompt: '<h1>Écoute.</h1>' +
                 'Merke dir die Antworten! Klicke erst auf "prochain", wenn du den Text gehört hast. Die Antworten musst du zu einem späteren Zeitpunkt eingeben.' +
-                '<dif class="left">' + quest2Text.join("") + '</dif>',
+                '<div class="left">' + quest2Text.join("") + '</div>',
             choices: ['prochain', 'répéter'],
             // response_allowed_while_playing: false,
         }],
@@ -131,7 +131,7 @@
             stimulus: 'sound/comprehension-orale/cours-de-natation-3.mp3',
             prompt: '<h1>Écoute.</h1>' +
                 'Merke dir die Antworten! Klicke erst auf "prochain", wenn du den Text gehört hast. Die Antworten musst du zu einem späteren Zeitpunkt eingeben.' +
-                '<dif class="left">' + quest3Text.join("") + '</dif>',
+                '<div class="left">' + quest3Text.join("") + '</div>',
             choices: ['prochain', 'répéter'],
             // response_allowed_while_playing: false,
         }],
