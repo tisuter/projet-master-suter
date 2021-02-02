@@ -61,9 +61,9 @@ var schlusssatzFragen = {
 };
 
 
-// let loopFunction = function (data) {
-//     return data.values()[0].button_pressed === 2;
-// };
+let loopFunction = function (data) {
+     return data.values()[0].button_pressed === 1;
+ };
 
 let lexTaleAudioFiles = [
     {text: 'cheveux', audio: '01-cheveux.mp3'},
