@@ -409,36 +409,37 @@ var c1VerbesIndef = ['ich gestehe', 'du meinst', 'keine Sorge', 'ihr verheimlich
 var c1VerbesConjug = ['(an)lügen', 'versende', 'leite weiter', 'getötet', 'aussteigen', 'geschlagen'];
 
 let motsCiblesFilmCVar2 = [
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'flou', audio: '02-flou.m4a'},
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'ultime', audio: '02-ultime.m4a'},
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'sale', audio: '02-sale.m4a'},
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'encore', audio: '02-encore.m4a'},
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'jamais', audio: '02-jamais.m4a'},
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'car', audio: '02-car.m4a'},
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'si', audio: '02-si.m4a'},
-    { type: 'adjectif&co', translation: c1Adjectifs, text: 'sauf', audio: '02-sauf.m4a'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'flou', audio: '02-flou.m4a', sentence: '<p>Pourquoi j\'arrive pas à rester propre comme toutes ces filles avec leur petit carré <b>flou</b> parfait, leur petit slim noir sans plis...</p>'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'ultime', audio: '02-ultime.m4a', sentence: '<p>C\'est ma passion <b>ultime</b>, les boulettes !</p>'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'sale', audio: '02-sale.m4a', sentence: '<p>Je suis négligée, je suis dégueulasse. Même propre, je fais <b>sale</b>.</p>'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'encore', audio: '02-encore.m4a', sentence: '<p>Antoine croit <b>encore </b>que tu vas au yoga prénatal ?</p>'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'jamais', audio: '02-jamais.m4a', sentence: '<p>Ce sera <b>jamais </b>fini avant l\'arrivée du bébé.</p>'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'car', audio: '02-car.m4a', sentence: '<p>Et t\'attends pas à un cadeau commun <b>car </b>personne a mis sur la cagnotte</p>'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'si', audio: '02-si.m4a', sentence: '<p>T\'es <b>si </b>jolie que j\'en oublie que ton pull est dégueulasse.</p>'},
+    { type: 'adjectif&co', translation: c1Adjectifs, text: 'sauf', audio: '02-sauf.m4a', sentence: '<p>- Non, mais... je vois tout <b>sauf</b> quelqu\'un de bidon, moi.</p><p>- T\'es magnifique.</p>'},
 
-    { type: 'nomPl', translation: c1NomPl, text: 'des boulettes', audio: '02-boulettes.m4a'},
-    { type: 'nomPl', translation: c1NomPl, text: 'des conneries', audio: '02-conneries.m4a'},
+    { type: 'nomPl', translation: c1NomPl, text: 'des boulettes', audio: '02-boulettes.m4a', sentence: '<p>Des sandwichs <b>aux boulettes</b> ? </p><p>– Oui.</p>'},
+    { type: 'nomPl', translation: c1NomPl, text: 'des conneries', audio: '02-conneries.m4a', sentence: '<p>- Je comprends rien au texto. Tiens.</p><p>- Envoie pas <b>de conneries</b>. </p>'},
+    { type: 'nomSg', translation: c1NomSg, text: 'un endroit', audio: '02-endroit.m4a', sentence: '<p>On a pas <b>d\'endroit</b> pour faire ton anniversaire.</p>'},
 
-    { type: 'nomSg', translation: c1NomSg, text: 'un endroit', audio: '02-endroit.m4a'},
-    { type: 'nomSg', translation: c1NomSg, text: 'une goutte', audio: '02-goutte.m4a'},
-    { type: 'nomSg', translation: c1NomSg, text: 'une crotte', audio: '02-crotte.m4a'},
-    { type: 'nomSg', translation: c1NomSg, text: 'un pote', audio: '02-pote.m4a'},
-    { type: 'nomSg', translation: c1NomSg, text: 'une confiance', audio: '02-confiance.m4a'},
-    { type: 'nomSg', translation: c1NomSg, text: 'un truc', audio: '02-truc.m4a'},
+    { type: 'nomSg', translation: c1NomSg, text: 'une goutte', audio: '02-goutte.m4a', sentence: '<p>- Vas-y, la petite touche pro : maïs, donut, <b>goutte</b>, <b>goutte</b>. Terminé.</p>'},
+    { type: 'nomSg', translation: c1NomSg, text: 'une crotte', audio: '02-crotte.m4a', sentence: '<p>- Il m\'a répondu !</p><p>- Ça dit quoi ? </p><p>- Alien, alien, <b>crotte</b>, bébé.</p>'},
+    { type: 'nomSg', translation: c1NomSg, text: 'un pote', audio: '02-pote.m4a', sentence: '<p>C\'est la <b>pote </b>d\'Elsa qui me l\'a filé pour être dans le perso.</p>'},
+    { type: 'nomSg', translation: c1NomSg, text: 'une confiance', audio: '02-confiance.m4a', sentence: '<p>- C\'est une surprise ?</p><p>- T\'as <b>confiance</b> en moi?</p>'},
+    { type: 'nomSg', translation: c1NomSg, text: 'un truc', audio: '02-truc.m4a', sentence: '<p>Vous me cachez <b>un truc</b> ou quoi ?</p>'},
 
-    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'j’avoue', audio: '02-avoue.m4a'},
-    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'tu crois', audio: '02-crois.m4a'},
-    { type: 'verbesIndef', translation: c1VerbesIndef, text: 't’inquiète', audio: '02-inquiete.m4a'},
-    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'vous cachez', audio: '02-cachez.m4a'},
-    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'on s’en fout', audio: '02-fout.m4a'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'j’avoue', audio: '02-avoue.m4a', sentence: '<p>Bon, OK, <b>j\'avoue</b>. Je venais ici, petit.</p>'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'tu crois', audio: '02-crois.m4a', sentence: '<p>- Et le père Noël, c\'est pour dire que t\'es un cadeau du ciel.</p><p>- <b>Tu crois </b>? </p>'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 't’inquiète', audio: '02-inquiete.m4a', sentence: '<p>- Tu m\'en veux pas, hein ? </p><p>- Non, <b>t\'inquiète</b>.</p>'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'vous cachez', audio: '02-cachez.m4a', sentence: '<p>- Qu\'est-ce qui se passe ? Vous êtes trop cheloues ce soir.</p><p>- Vous me <b>cachez</b> un truc ou quoi ?</p>'},
+    { type: 'verbesIndef', translation: c1VerbesIndef, text: 'on s’en fout', audio: '02-fout.m4a', sentence: '<p><b>On s\'en fout</b> ! Réponds. Sinon, ça fait la meuf qui attend pour répondre.</p>'},
 
-    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'mentir', audio: '02-mentir.m4a'},
-    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'envoie', audio: '02-envoie.m4a'},
-    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'transfère', audio: '02-transfere.m4a'},
-    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'tué', audio: '02-tue.m4a'}
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'mentir', audio: '02-mentir.m4a', sentence: '<p>C\'est pour savoir si je dois continuer <b>mentir</b> à mon frère sur ton congé.</p>'},
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'envoie', audio: '02-envoie.m4a', sentence: '<p><b>Envoie</b> juste un texto.</p>'},
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'transfère', audio: '02-transfere.m4a', sentence: '<p>- Vas-y, la petite touche pro : maïs, donut, goutte, goutte. Terminé. <b>Transfère</b>.</p><p>- Il m\'a répondu !</p>'},
+    { type: 'verbesConjug', translation: c1VerbesConjug, text: 'tué', audio: '02-tue.m4a', sentence: '<p>Le gars qui a <b>tué</b> cette fille rencontrée sur Tinder.  </p>'},
 ];
+
 var d1Adjectifs = ['ernst', 'neugierig', 'mühsam', 'bereit', 'jetzt', 'so/derart', 'nichts', 'aber', 'mit', 'scheu', 'gestern', 'fast'];
 var d1NomPl = ['ein Kinderwagen', 'eine Plage', 'eine Arbeit', 'ein Geschenk', 'ein Kleid', 'eine Arbeit', 'ein Sattel', 'ein Kabel'];
 var d1NomSg = ['die Paten', 'die Klamotten', 'die Rinder'];
@@ -446,35 +447,35 @@ var d1VerbesIndef = ['helfen', 'ähnlich sehen', '(ver)senden', 'warte', 'hör a
 var d1VerbesConjug = ['ich zahle zurück', 'ich kann', 'ich leihe aus'];
 
 let motsCiblesFilmDVar2 = [
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'sérieux', audio: '03-serieux.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'curieuse', audio: '03-curieuse.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'chiante', audio: '03-chiante.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'prête', audio: '03-prete.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'maintenant', audio: '03-maintenant.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'tellement', audio: '03-tellement.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'rien', audio: '03-rien.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'mais', audio: '03-mais.m4a' },
-    { type: 'adjectif&co', translation: d1Adjectifs, text: 'avec', audio: '03-avec.m4a' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'sérieux', audio: '03-serieux.m4a', sentence: '<p>C\'est <b>sérieux</b> avec son nouveau mec ?</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'curieuse', audio: '03-curieuse.m4a', sentence: '<p>« Passionnément <b>curieuse</b>.» Non, mais la fausse vie. Brangelina de la lose.</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'chiante', audio: '03-chiante.m4a', sentence: '<p>Pardon, les meufs. Je suis tellement <b>chiante</b>.</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'prête', audio: '03-prete.m4a', sentence: '<p>Moi, à ce train-là, je suis pas <b>prête</b> d\'avoir des petits-enfants.</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'maintenant', audio: '03-maintenant.m4a', sentence: '<p>Elle attend la réponse du pute. On fait quoi, <b>maintenant</b> ?</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'tellement', audio: '03-tellement.m4a', sentence: '<p>Je comprends pas. Mon plan était <b>tellement</b> ingénieusement génial.</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'rien', audio: '03-rien.m4a', sentence: '<p>- Ça va pas ?</p><p>- Juste une merde au boulot, <b>rien</b> de...</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'mais', audio: '03-mais.m4a', sentence: '<p>- Physiquement ?</p><p>- Non, <b>mais</b> aussi au niveau caractère.</p>' },
+    { type: 'adjectif&co', translation: d1Adjectifs, text: 'avec', audio: '03-avec.m4a', sentence: '<p>- Du codo quoi ?</p><p>- Ben, du cododo. Dormir <b>avec</b> le bébé.</p>' },
 
-    { type: 'nomPl', translation: d1NomPl, text: 'une poussette', audio: '03-poussette.m4a' },
-    { type: 'nomPl', translation: d1NomPl, text: 'une plaie', audio: '03-plaie.m4a' },
-    { type: 'nomPl', translation: d1NomPl, text: 'un taf', audio: '03-taf.m4a' },
-    { type: 'nomPl', translation: d1NomPl, text: 'un cadeau', audio: '03-cadeau.m4a' },
-    { type: 'nomPl', translation: d1NomPl, text: 'une robe', audio: '03-robe.m4a' },
-    { type: 'nomPl', translation: d1NomPl, text: 'un boulot', audio: '03-boulot.m4a' },
+    { type: 'nomPl', translation: d1NomPl, text: 'une poussette', audio: '03-poussette.m4a', sentence: '<p>Et merci pour la <b>poussette</b> !</p>' },
+    { type: 'nomPl', translation: d1NomPl, text: 'une plaie', audio: '03-plaie.m4a', sentence: '<p>Quelle <b>plaie</b>.</p>' },
+    { type: 'nomPl', translation: d1NomPl, text: 'un taf', audio: '03-taf.m4a', sentence: '<p>Je vais au <b>taf</b>. </p>' },
+    { type: 'nomPl', translation: d1NomPl, text: 'un cadeau', audio: '03-cadeau.m4a', sentence: '<p><b>Cadeau</b> des parrains. Ça se fait, non ?</p>' },
+    { type: 'nomPl', translation: d1NomPl, text: 'une robe', audio: '03-robe.m4a', sentence: '<p>Je vais payer pour la <b>robe</b> et pour son haut aussi.</p>' },
+    { type: 'nomPl', translation: d1NomPl, text: 'un boulot', audio: '03-boulot.m4a', sentence: '<p>Et, au <b>boulot</b>, eh ben... je me sens complètement inutile.</p>' },
 
-    { type: 'nomSg', translation: d1NomSg, text: 'des parrains', audio: '03-parrains.m4a' },
-    { type: 'nomSg', translation: d1NomSg, text: 'des fringues', audio: '03-fringues.m4a' },
+    { type: 'nomSg', translation: d1NomSg, text: 'des parrains', audio: '03-parrains.m4a', sentence: '<p>Cadeau des <b>parrains</b>. Ça se fait, non ?</p>' },
+    { type: 'nomSg', translation: d1NomSg, text: 'des fringues', audio: '03-fringues.m4a', sentence: '<p>Bon, vas-y, on y va, je vais te louer des <b>fringues</b>. On va chez moi.</p>' },
 
-    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'aider', audio: '03-aider.m4a' },
-    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'ressembler', audio: '03-ressembler.m4a' },
-    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'envoyer', audio: '03-envoyer.m4a' },
-    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'attends', audio: '03-attends.m4a' },
-    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'arrête', audio: '03-arrete.m4a' },
-    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'désolé', audio: '03-desole.m4a' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'aider', audio: '03-aider.m4a', sentence: '<p>Je peux vous <b>aider</b> ?</p>' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'ressembler', audio: '03-ressembler.m4a', sentence: '<p>Je vais <b>ressembler</b> à sa mère.</p>' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'envoyer', audio: '03-envoyer.m4a', sentence: '<p>Ah ! Peut-être que Jules serait d\'accord pour lui <b>envoyer</b> un message gratos.</p>' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'attends', audio: '03-attends.m4a', sentence: '<p>- Elsa, <b>attends</b> !</p><p>- On est désolées.</p>' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'arrête', audio: '03-arrete.m4a', sentence: '<p>-  Attends, <b>arrête</b>, Elsa ! </p><p>-  Hé, bébé...</p>' },
+    { type: 'verbesIndef', translation: d1VerbesIndef, text: 'désolé', audio: '03-desole.m4a', sentence: '<p><b>Désolée</b>, on a tout vendu ce matin.</p>' },
 
-    { type: 'verbesConjug', translation: d1VerbesConjug, text: 'je rembourse', audio: '03-rembourser.m4a' },
-    { type: 'verbesConjug', translation: d1VerbesConjug, text: 'je peux', audio: '03-peux.m4a' }
+    { type: 'verbesConjug', translation: d1VerbesConjug, text: 'je rembourse', audio: '03-rembourser.m4a', sentence: '<p>-C\'est loin, ton hôtel ? </p><p>- Pour faire un aller-retour. </p><p>- Je te <b>rembourse</b>, t\'inquiète !</p>' },
+    { type: 'verbesConjug', translation: d1VerbesConjug, text: 'je peux', audio: '03-peux.m4a', sentence: '<p>Je <b>peux</b> vous aider, monsieur ?</p>' },
 ];
 
 const motsCiblesFilmAll = motsCiblesFilmB.concat(motsCiblesFilmC).concat(motsCiblesFilmD);

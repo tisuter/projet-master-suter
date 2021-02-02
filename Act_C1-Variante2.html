@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Projet Master | Activité C</title>
     <script src="js/jspsych.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="plugins/jspsych-instructions.js"></script>
     <script src="plugins/jspsych-survey-text.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
@@ -37,7 +37,7 @@
             },
             prompt: function () {
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
-                    'Klicke auf die Übersetzung:<br><br>';
+                    'Lies den Satz und überlege, was das fettgedruckte Wort bedeutet. Drücke auf die passende Übersetzung.<br><br><div class="sentence">' + jsPsych.timelineVariable('sentence', true) + '</div><br>';
             },
             choices: function () {
                 return jsPsych.timelineVariable('translation', true);
