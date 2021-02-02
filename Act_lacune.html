@@ -28,7 +28,7 @@
         button_label_next: 'On y va',
     };
 
-    let choices1 = ['a', 'b', 'c', 'é', 'f', 'g', 'h', 'j', 'l', 'm', 'p', 'r', 's', 't', 'v']
+    let choices1 = ['a', 'b', 'c', 'é', 'f', 'g', 'h', 'j', 'l', 'm', 'p', 'r', 's', 't', 'v'];
     let lacune1Questions = [
         { word: 'bon_our, &nbsp;&nbsp;&nbsp; _e', solution: 'j'},
         { word: 're_arde, &nbsp;&nbsp;&nbsp; man_er', solution: 'g'},
@@ -47,7 +47,7 @@
         { word: '_anque, &nbsp;&nbsp;&nbsp; _on', solution: 'b'},
     ];
 
-    let choices2 = ['b', 'c', 'd', 'f', 'g', 'h', 'i', 'I', 'm', 'p', 'q', 's', 't', 'u', 'x']
+    let choices2 = ['b', 'c', 'd', 'f', 'g', 'h', 'i', 'I', 'm', 'p', 'q', 's', 't', 'u', 'x'];
     let lacune2Questions = [
         { word: '_arfait, &nbsp;&nbsp;&nbsp; _artir', solution: 'p'},
         { word: 'c_anter, &nbsp;&nbsp;&nbsp; _ôtel', solution: 'h'},
@@ -96,7 +96,7 @@
         //LEA ENDE
         on_finish: function () {
             jsPsych.data.displayData();
-            sendData("Act_B1-Variante2", jsPsych.data.get().json(true));
+            sendData("Act_lacune", jsPsych.data.get().json(true));
         }
     });
 
