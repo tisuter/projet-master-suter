@@ -520,10 +520,13 @@ numbers = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12
 
 function getForm(klasse, group) {
     if (klasse.toLowerCase() === "3d" && group.toLowerCase() === "1") {
+        return "mleovnye"
     }
     if (klasse.toLowerCase() === "3d" && group.toLowerCase() === "2") {
+        return "myybvjqz"
     }
     if (klasse.toLowerCase() === "3d" && group.toLowerCase() === "3") {
+        return "mzbkwgld"
     }
     if (klasse.toLowerCase() === "2a" && group.toLowerCase() === "1") {
     }
