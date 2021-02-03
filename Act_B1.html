@@ -33,7 +33,7 @@
         timeline: [{
             type: 'audio-button-response',
             stimulus: function () {
-                return 'sound/mots-cibles/' + jsPsych.timelineVariable('audio', true);
+                return jsPsych.timelineVariable('audio', true);
             },
             prompt: function () {
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +

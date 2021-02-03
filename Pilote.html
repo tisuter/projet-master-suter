@@ -46,7 +46,7 @@
         timeline: [{
             type: 'audio-button-response',
             stimulus: function () {
-                return 'sound/mots-cibles/' + jsPsych.timelineVariable('audio', true);
+                return jsPsych.timelineVariable('audio', true);
             },
             prompt: function () {
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
@@ -63,14 +63,14 @@
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
         // loop_function: loopFunction,
-        timeline_variables: motsCiblesFilmAllVar2,
+        timeline_variables: motsCiblesFilmAllVar2.concat(nonWords),
         randomize_order: true
     };
 
     // LEA ENDE
     jsPsych.init({
         //LEA START
-        preload_audio: motsCiblesFilmAllVar2Preload,
+        preload_audio: motsCiblesFilmAllVar2Preload.concat(nonWordsPreload),
         timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
         //LEA ENDE
         on_finish: function () {
