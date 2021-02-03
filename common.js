@@ -2,8 +2,17 @@ var group = getParam("group");
 var klasse = getParam("class");
 
 //Disable or enable globally
-var responseAllowedWhilePlaying = false;
+var responseAllowedWhilePlaying = getParamOrElse('wait', false)
 
+function getParamOrElse(param, elseValue) {
+    let searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.has(param)) {
+        return searchParams.get(param)
+    }
+    return elseValue
+}
+
+false;
 function getParam(param) {
     let searchParams = new URLSearchParams(window.location.search);
     if (searchParams.has(param)) {
