@@ -54,7 +54,8 @@
             response_allowed_while_playing: responseAllowedWhilePlaying,
             on_finish: function(data){
                 data.frenchWord = jsPsych.timelineVariable('text', true);
-                data.textKnown = yesNo[data.button_pressed];
+                data.wordKnown = yesNo[data.button_pressed];
+                data.isTW = jsPsych.timelineVariable('isTW', true);
             },
         }],
 
