@@ -2,7 +2,7 @@ var group = getParam("group");
 var klasse = getParam("class");
 
 //Disable or enable globally
-var responseAllowedWhilePlaying = true;
+var responseAllowedWhilePlaying = false;
 
 function getParam(param) {
     let searchParams = new URLSearchParams(window.location.search);
@@ -454,7 +454,7 @@ function sendData(name, data) {
 
     var url =  'https://formspree.io/' + getForm(klasse, group);
     //TODO: Activate send
-/*
+
     $.ajax({
         // url:'https://formspree.io/suterchristoph1@gmail.com',
         url: url,
@@ -473,5 +473,5 @@ function sendData(name, data) {
         }
 
     });
-*/
+
 }
