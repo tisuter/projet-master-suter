@@ -45,6 +45,8 @@
             on_finish: function(data){
                 data.frenchWord = jsPsych.timelineVariable('text', true);
                 data.germanWordSelected = jsPsych.timelineVariable('translation', true)[data.button_pressed];
+                data.category =  jsPsych.timelineVariable('category', true);
+                data.type = jsPsych.timelineVariable('type', true);
             },
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
