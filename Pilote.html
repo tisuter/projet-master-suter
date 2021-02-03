@@ -55,20 +55,22 @@
             on_finish: function(data){
                 data.frenchWord = jsPsych.timelineVariable('text', true);
                 data.textKnown = yesNo[data.button_pressed];
+                data.category =  jsPsych.timelineVariable('category', true);
+                data.type = jsPsych.timelineVariable('type', true);
             },
 
             choices: yesNo,
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
         // loop_function: loopFunction,
-        timeline_variables: motsCiblesFilmAll,
+        timeline_variables: motsCiblesFilmAllVar2,
         randomize_order: true
     };
 
     // LEA ENDE
     jsPsych.init({
         //LEA START
-        preload_audio: motsCiblesFilmAllPreload,
+        preload_audio: motsCiblesFilmAllVar2Preload,
         timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
         //LEA ENDE
         on_finish: function () {
