@@ -264,7 +264,7 @@ let motsCiblesFilmBVar2 = [
     {category: "TW", type: 'nomPl', translation: shuffle([...b1NomPl]), text: 'des courses', audio: 'sound/mots-cibles/01-courses.m4a', sentence: '<p>Oui, c\'est la liste de <b>courses</b> de ma meuf.</p>'},
     {category: "TW", type: 'nomPl', translation: shuffle([...b1NomPl]), text: 'des gosses', audio: 'sound/mots-cibles/01-gosses.m4a', sentence: '<p>Et bruncher avec tes potes qui ont des <b>gosses</b>.</p>'},
     {category: "TW", type: 'nomSg', translation: shuffle([...b1NomSg]), text: 'une cagnotte', audio: 'sound/mots-cibles/01-cagnotte.m4a', sentence: '<p>- C\'est pour l\'anniv d\'Elsa.</p><p>- J\'ai déjà mis sur ta <b>cagnotte</b> Leetchi.</p>'},
-    {category: "TW", type: 'nomSg', translation: shuffle([...b1NomSg]), text: 'une lourdeur', audio: 'sound/mots-cibles/01-lourdeur.m4a', sentence: '<p>Oh, mais la lourdeur ! Milou !</p><p>- C\'est toi, la <b>lourdeur</b>.</p>'},
+    {category: "TW", type: 'nomSg', translation: shuffle([...b1NomSg]), text: 'une lourdeur', audio: 'sound/mots-cibles/01-lourdeur.m4a', sentence: '<p>- Oh, mais la lourdeur ! Milou !</p><p>- C\'est toi, la <b>lourdeur</b>.</p>'},
     {category: "TW", type: 'nomSg', translation: shuffle([...b1NomSg]), text: 'un mec', audio: 'sound/mots-cibles/01-mec.m4a', sentence: '<p>C\'était cool de passer un moment avec ce <b>mec</b>.</p>'},
 
     {category: "TW", type: 'verbesIndef', translation: shuffle([...b1VerbesIndef]), text: 'trouvé', audio: 'sound/mots-cibles/01-trouve.m4a', sentence: '<p>Bien sûr, vous l\'avez <b>trouvé</b>. Où ça ? Dans le sac de Charlotte ?</p>'},
@@ -273,10 +273,10 @@ let motsCiblesFilmBVar2 = [
     {category: "TW", type: 'verbesIndef', translation: shuffle([...b1VerbesIndef]), text: 'voler', audio: 'sound/mots-cibles/01-voler.m4a', sentence: '<p>- Ça suffit de mettre tes clés là, on va se faire cambrioler.</p><p>- Oui, on va vous <b>voler</b> vos poêles antiadhésives !</p>'},
 
     {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 'ça suffit', audio: 'sound/mots-cibles/01-suffit.m4a', sentence: '<p>Non ! Antoine, elle le refait ! Elle le refait ! Non, <b>ça suffit</b> !</p>'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 'ça sonne', audio: 'sound/mots-cibles/01-sonne.m4a', sentence: '<p>Ça sonne, <b>ça sonne</b>. C\'est elle !</p><p>- Je lui dis quoi, moi ?</p>'},
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 'ça sonne', audio: 'sound/mots-cibles/01-sonne.m4a', sentence: '<p>-Ça sonne, <b>ça sonne</b>. C\'est elle !</p><p>- Je lui dis quoi, moi ?</p>'},
     {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 'ça se bouffe', audio: 'sound/mots-cibles/01-bouffe.m4a', sentence: '<p><b>Ça se bouffe</b> pas avec du lait ton truc ?</p>'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 'ta gueule', audio: 'sound/mots-cibles/01-gueule.m4a', sentence: '<p><b>Ta gueule</b> ! Changement d\'adresse. Qu\'est-ce que tu veux...</p><p>- Ta gueule !</p>'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 't’inquiète', audio: 'sound/mots-cibles/01-inquiete.m4a', sentence: '<p>Je vais voir ce qu\'il me reste.</p><p>- Non, c\'est bon, <b>t\'inquiète</b>.</p>'},
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 'ta gueule', audio: 'sound/mots-cibles/01-gueule.m4a', sentence: '<p>-<b>Ta gueule</b> ! Changement d\'adresse. Qu\'est-ce que tu veux...</p><p>- Ta gueule !</p>'},
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...b1VerbesConjug]), text: 't’inquiète', audio: 'sound/mots-cibles/01-inquiete.m4a', sentence: '<p>-Je vais voir ce qu\'il me reste.</p><p>- Non, c\'est bon, <b>t\'inquiète</b>.</p>'},
 ];
 
 var c1Adjectifs = ['verschwommen', 'allerletzte', 'schmutzig', 'falls/so/doch', 'noch', 'nie', 'denn', 'ausser', 'defekt', 'ohne', 'keine'];
@@ -348,10 +348,10 @@ let motsCiblesFilmDVar2 = [
     {category: "TW", type: 'verbesIndef', translation: shuffle([...d1VerbesIndef]), text: 'ressembler', audio: 'sound/mots-cibles/03-ressembler.m4a', sentence: '<p>Je vais <b>ressembler</b> à sa mère.</p>' },
     {category: "TW", type: 'verbesIndef', translation: shuffle([...d1VerbesIndef]), text: 'envoyer', audio: 'sound/mots-cibles/03-envoyer.m4a', sentence: '<p>Ah ! Peut-être que Jules serait d\'accord pour lui <b>envoyer</b> un message gratos.</p>' },
     {category: "TW", type: 'verbesIndef', translation: shuffle([...d1VerbesIndef]), text: 'attends', audio: 'sound/mots-cibles/03-attends.m4a', sentence: '<p>- Elsa, <b>attends</b> !</p><p>- On est désolées.</p>' },
-    {category: "TW", type: 'verbesIndef', translation: shuffle([...d1VerbesIndef]), text: 'arrête', audio: 'sound/mots-cibles/03-arrete.m4a', sentence: '<p>-  Attends, <b>arrête</b>, Elsa ! </p><p>-  Hé, bébé...</p>' },
+    {category: "TW", type: 'verbesIndef', translation: shuffle([...d1VerbesIndef]), text: 'arrête', audio: 'sound/mots-cibles/03-arrete.m4a', sentence: '<p>- Attends, <b>arrête</b>, Elsa ! </p><p>- Hé, bébé...</p>' },
     {category: "TW", type: 'verbesIndef', translation: shuffle([...d1VerbesIndef]), text: 'désolé', audio: 'sound/mots-cibles/03-desole.m4a', sentence: '<p><b>Désolée</b>, on a tout vendu ce matin.</p>' },
 
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...d1VerbesConjug]), text: 'je rembourse', audio: 'sound/mots-cibles/03-rembourser.m4a', sentence: '<p>-C\'est loin, ton hôtel ? </p><p>- Pour faire un aller-retour. </p><p>- Je te <b>rembourse</b>, t\'inquiète !</p>' },
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...d1VerbesConjug]), text: 'je rembourse', audio: 'sound/mots-cibles/03-rembourser.m4a', sentence: '<p>- C\'est loin, ton hôtel ? </p><p>- Pour faire un aller-retour. </p><p>- Je te <b>rembourse</b>, t\'inquiète !</p>' },
     {category: "TW", type: 'verbesConjug', translation: shuffle([...d1VerbesConjug]), text: 'je peux', audio: 'sound/mots-cibles/03-peux.m4a', sentence: '<p>Je <b>peux</b> vous aider, monsieur ?</p>' },
 ];
 
