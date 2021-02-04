@@ -30,10 +30,9 @@
 
     var einleitungfragen = {
         type: 'instructions',
-        pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich einen Französisch-Wortschatztest lösen.</b> Du findest 84 Buchstabenfolgen, ' +
-        'die wie französische Wörter aussehen. Aber nur einige dieser Folgen sind richtige französische Wörter. Bitte gib an, welche Wörter du kennst ' +
-        '(oder du ziemlich sicher bist, dass es sich um ein französisches Wort handelt, auch wenn du die Bedeutung nicht genau kennst). ' +
-        'Aber aufgepasst: Versuche nicht bei Wörtern OUI zu klicken, falls du sie noch nie gesehen hast, denn für Fehler gibt es Strafpunkte.<p>' +
+        pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich viele französische Wörter sehen.</b>. Aber nur einige ' +
+        'sind richtige französische Wörter. Bitte gib an, welche Wörter du kennst (also übersetzen oder erklären kannst).' +
+        'Aber aufgepasst: Versuche nicht bei Wörtern OUI zu klicken, falls du sie nicht kennst, denn für Fehler gibt es Strafpunkte.<p>' +
         '<p>Was musst du machen?<p> ' +
         '<ol><li>Verbinde deine Kopfhörer.</li>' +
         '<li>Höre das Wort.</li>' +
@@ -59,7 +58,7 @@
             },
             prompt: function () {
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
-                    'Kennst du dieses Wort?<br><br>';
+                    'Kennst du diesen Ausdruck?<br><br>';
             },
             on_finish: function(data){
                 data.frenchWord = jsPsych.timelineVariable('text', true);
