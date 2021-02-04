@@ -19,6 +19,15 @@
 
 <script>
     // LEA start
+    var einleitungQ2 = {
+        type: 'instructions',
+        pages: function () {
+            return ['<h2>Bonjour! Hier bist du richtig bei Questionnaire 2. Wenn du bereit bist, drücke weiter (prochain).</h2>'];
+        },
+        show_clickable_nav: true,
+        button_label_next: 'prochain',
+        allow_backward: false,
+    };
 
     var einleitungfragen = {
         type: 'instructions',
@@ -90,7 +99,7 @@
 
     jsPsych.init({
         //LEA START
-        timeline: [einleitung, nameklasse, einleitungfragen, filmGefallen, filmVerstanden, filmFranzoesischZukunft, schlusssatzFragen],
+        timeline: [einleitungQ2, nameklasse, einleitungfragen, filmGefallen, filmVerstanden, filmFranzoesischZukunft, schlusssatzFragen],
         //LEA ENDE
         on_finish: function () {
             sendData("Q2", jsPsych.data.get().json(true));
