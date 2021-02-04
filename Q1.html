@@ -35,9 +35,13 @@
                 prompt: '<h2>Welche Sprachen (ausser Schweizerdeutsch) sprichst du zuhause? z.B. Französisch, Italienisch </h2>',
                 columns: 150,
                 required: false,
-                name: 'langue-eleve'
+                name: 'langueEleve'
             }
         ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.langueEleve = jsonData.langueEleve;
+        },
         button_label: 'prochain >',
     };
 
@@ -47,11 +51,16 @@
         questions: [
             {
                 prompt: '<h2>Wie oft schaust du Filme, Serien oder TV auf FRANZÖSISCH?</h2>',
-                name: 'habitudes-film',
+                name: 'habitudesFilm',
                 labels: filmgewohnheitenOptions,
                 required: true
             },
         ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.habitudesFilm = jsonData.habitudesFilm;
+            data.habitudesFilmValue = filmgewohnheitenOptions[jsonData.habitudesFilm];
+        },
         button_label: 'prochain >',
     };
 
@@ -65,6 +74,10 @@
                 required: true, horizontal: true,
             },
         ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.kenntnisserie = jsonData.Q0;
+        },
         button_label: 'prochain >',
     };
 
@@ -79,6 +92,10 @@
                 horizontal: true,
             },
         ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.kenntnisplancoeur = jsonData.Q0;
+        },
         button_label: 'prochain >',
     };
 

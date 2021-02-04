@@ -34,11 +34,16 @@
         questions: [
             {
                 prompt: '<h2>Wie hast du die Filme gefunden?</h2>',
-                name: 'plaisir-film',
+                name: 'plaisirFilm',
                 labels: filmGefallenOptions,
                 required: true
             },
         ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.plaisirFilm = jsonData.plaisirFilm;
+            data.plaisirFilmValue = filmGefallenOptions[jsonData.plaisirFilm];
+        },
         button_label: 'prochain >',
     };
 
@@ -48,11 +53,16 @@
         questions: [
             {
                 prompt: '<h2>Wie gut hast du die Filme verstanden?</h2>',
-                name: 'comprehension-film',
+                name: 'comprehensionFilm',
                 labels: filmVerstandenOptions,
                 required: true
             },
         ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.comprehensionFilm = jsonData.comprehensionFilm;
+            data.comprehensionFilmValue = filmVerstandenOptions[jsonData.comprehensionFilm];
+        },
         button_label: 'prochain >',
     };
 
@@ -62,15 +72,18 @@
         questions: [
             {
                 prompt: '<h2>Wirst du zukünftig in der ab und zu Freizeit Serien/TV auf FRANZÖSISCH schauen?</h2>',
-                name: 'avenir-film',
+                name: 'avenirFilm',
                 labels: filmFranzoesischZukunftOptions,
                 required: true
             },
         ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.avenirFilm = jsonData.avenirFilm;
+            data.avenirFilmValue = filmFranzoesischZukunftOptions[jsonData.avenirFilm];
+        },
         button_label: 'prochain >',
     };
-
-
 
     // LEA ENDE
 
