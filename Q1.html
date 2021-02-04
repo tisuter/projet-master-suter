@@ -19,6 +19,15 @@
 
 <script>
     // LEA start
+    var einleitungQ1 = {
+        type: 'instructions',
+        pages: function () {
+            return ['<h2>Bonjour! Hier bist du richtig beim Questionnaire 1. Wenn du bereit bist, drücke weiter (prochain).</h2>'];
+        },
+        show_clickable_nav: true,
+        button_label_next: 'prochain',
+        allow_backward: false,
+    };
 
     var einleitungfragen = {
         type: 'instructions',
@@ -105,7 +114,7 @@
 
     jsPsych.init({
         //LEA START
-        timeline: [einleitung, nameklasse, einleitungfragen, sprache, filmgewohnheiten, kenntnisserie, kenntnisplancoeur, schlusssatzFragen],
+        timeline: [einleitungQ1, nameklasse, einleitungfragen, sprache, filmgewohnheiten, kenntnisserie, kenntnisplancoeur, schlusssatzFragen],
         //LEA ENDE
         on_finish: function () {
             jsPsych.data.displayData();

@@ -18,6 +18,17 @@
 
 <script>
     // LEA start
+
+    var einleitungA = {
+        type: 'instructions',
+        pages: function () {
+            return ['<h2>Bonjour! Hier bist du richtig bei Activité A. Wenn du bereit bist, drücke weiter (prochain).</h2>'];
+        },
+        show_clickable_nav: true,
+        button_label_next: 'prochain',
+        allow_backward: false,
+    };
+
     var einleitungfragen = {
         type: 'instructions',
         pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich einen Französisch-Wortschatztest lösen.</b> Du findest 84 Buchstabenfolgen, ' +
@@ -70,7 +81,7 @@
         preload_audio: lexTaleAudioFilesPreload,
 
         //LEA START
-        timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
+        timeline: [einleitungA, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
         //LEA ENDE
         on_finish: function () {
             sendData("Act_A", jsPsych.data.get().json(true));
