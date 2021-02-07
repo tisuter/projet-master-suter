@@ -43,10 +43,13 @@
                 return jsPsych.timelineVariable('translation', true);
             },
             on_finish: function(data){
+                let germanWordSelected = jsPsych.timelineVariable('translation', true)[data.button_pressed];
+                let correct = jsPsych.timelineVariable('solution', true) === germanWordSelected;
                 data.frenchWord = jsPsych.timelineVariable('text', true);
-                data.germanWordSelected = jsPsych.timelineVariable('translation', true)[data.button_pressed];
+                data.germanWordSelected = germanWordSelected;
                 data.category =  jsPsych.timelineVariable('category', true);
                 data.type = jsPsych.timelineVariable('type', true);
+                data.correct = correct
             },
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
