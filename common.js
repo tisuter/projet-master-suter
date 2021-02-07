@@ -262,6 +262,37 @@ let motsCiblesFilmD = [
     {category: "TW", type: 'verbesConjug', translation: shuffle([...d1VerbesConjug]), text: 'je peux', audioAvecArticle: 'sound/mots-cibles/avec-articles/03-peux.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/03-peux.m4a', sentence: '<p>Je <b>peux</b> vous aider, monsieur ?</p>' },
 ];
 
+let motsCiblesFilmDGroup2 = [
+
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'devant', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-devant.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-devant.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'durs', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-durs.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-durs.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'enfin', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-enfin.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-enfin.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'exprès', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-expres.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-expres.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'foutu', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-foutu.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-foutu.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'guère', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-guere.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-guere.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'longtemps', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-longtemps.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-longtemps.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'manuel', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-manuel.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-manuel.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'mille', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-mille.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-mille.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'plein', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-plein.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-plein.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'serré', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-serre.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-serre.m4a', sentence: '<p>tbd</p>'},
+
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'accompagner', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-accompagner.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-accompagner.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'baiser', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-baiser.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-baiser.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'chier', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-chier.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-chier.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'dû', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-du.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-du.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'essayer', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-essayer.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-essayer.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'pu', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-pu.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-pu.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'quitter', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-quitter.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-quitter.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesIndef", translation: shuffle([...d1VerbesIndef]), text: 'tromper', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-tromper.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-tromper.m4a', sentence: '<p>tbd</p>'},
+
+    {category: "TW", type: "verbesConjug", translation: shuffle([...d1VerbesConjug]), text: 'j’adore', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-adore.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-adore.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesConjug", translation: shuffle([...d1VerbesConjug]), text: 'il ait', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-ait.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-ait.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesConjug", translation: shuffle([...d1VerbesConjug]), text: 'on apprécie', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-apprecie.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-apprecie.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesConjug", translation: shuffle([...d1VerbesConjug]), text: 'je dois', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-dois.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-dois.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesConjug", translation: shuffle([...d1VerbesConjug]), text: 'je m’en occupe', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-occupe.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-occupe.m4a', sentence: '<p>tbd</p>'},
+    {category: "TW", type: "verbesConjug", translation: shuffle([...d1VerbesConjug]), text: 'il savait', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-savait.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-savait.m4a', sentence: '<p>tbd</p>'},
+];
+
 let nonWords = [
     { category: "NW", type: 'NW', translation: null, sentence: null, text: 'bondar', audioAvecArticle: 'sound/pseudo-mots/bondar.m4a'},
     { category: "NW", type: 'NW', translation: null, sentence: null, text: 'l\'archout', audioAvecArticle: 'sound/pseudo-mots/archout.m4a'},
@@ -290,6 +321,8 @@ let nonWords = [
     { category: "NW", type: 'NW', translation: null, sentence: null, text: 'les zyrnes', audioAvecArticle: 'sound/pseudo-mots/zyrnes.m4a'},
 ];
 
+let nonWordsShort = nonWords.slice(0, 10);
+
 const motsCiblesFilmAll = motsCiblesFilmB.concat(motsCiblesFilmC).concat(motsCiblesFilmD);
 
 const lexTaleAudioFilesPreload = lexTaleAudioFiles.map(item => {
@@ -305,6 +338,10 @@ const motsCiblesFilmCVSansArticlear2Preload = motsCiblesFilmC.map(item => {
 const motsCiblesFilmDSansArticlePreload = motsCiblesFilmD.map(item => {
     return item.audioSansArticle
 });
+const motsCiblesFilmDGroup2SansArticlePreload = motsCiblesFilmDGroup2.map(item => {
+    return item.audioSansArticle
+});
+
 const motsCiblesFilmAllSansArticlePreload = motsCiblesFilmAll.map(item => {
     return item.audioSansArticle
 });
@@ -317,6 +354,10 @@ const motsCiblesFilmCAvecArticlePreload = motsCiblesFilmC.map(item => {
 const motsCiblesFilmDAvecArticlePreload = motsCiblesFilmD.map(item => {
     return item.audioAvecArticle
 });
+const motsCiblesFilmDGroup2AvecArticlePreload = motsCiblesFilmDGroup2.map(item => {
+    return item.audioAvecArticle
+});
+
 const motsCiblesFilmAllAvecArticlePreload = motsCiblesFilmAll.map(item => {
     return item.audioAvecArticle
 });
@@ -364,7 +405,6 @@ function sendData(name, data) {
         }
     });
 }
-
 
 // helper
 function shuffle(array) {

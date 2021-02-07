@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Projet Master | Pilote 2</title>
+    <script src="js/jspsych.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="plugins/jspsych-instructions.js"></script>
+    <script src="plugins/jspsych-survey-text.js"></script>
+    <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="common.js"></script>
+    <link rel="stylesheet" href="css/jspsych.css">
+    <link rel="stylesheet" href="css/jspsych-custom-styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body></body>
+
+<script>
+    // LEA start
+    var einleitungPilot = {
+        type: 'instructions',
+        pages: function () {
+            return ['<h2>Bonjour! Hier bist du richtig bei der Übung Pilote 2. Wenn du bereit bist, drücke weiter (prochain).</h2>'];
+        },
+        show_clickable_nav: true,
+        button_label_next: 'prochain',
+        allow_backward: false,
+    };
+
+    var einleitungfragen = {
+        type: 'instructions',
+        pages: ['<div class="left"><p><b>Bonjour! Du wirst gleich viele französische Wörter sehen.</b> Aber nur einige ' +
+        'sind richtige französische Wörter. Bitte gib an, welche Wörter du kennst (also übersetzen oder erklären kannst).' +
+        'Aber aufgepasst: Versuche nicht bei Wörtern OUI zu klicken, falls du sie nicht kennst, denn für Fehler gibt es Strafpunkte.<p>' +
+        '<p>Was musst du machen?<p> ' +
+        '<ol><li>Verbinde deine Kopfhörer.</li>' +
+        '<li>Höre das Wort.</li>' +
+        '<li>Falls du das Wort kennst, klicke OUI sonst NON.</li></ol>' +
+        '<b>Beispiel 1</b>: Du kennst wahrscheinlich das Wort <i>pomme</i>. Dann klicke also OUI an. <p>' +
+        '<p><b>Beispiel 2</b>: Das Wort <i>favernais</i> kennst du wahrscheinlich nicht. Dann klickst du NON an. <p>' +
+        '<p><b>Wichtig</b>: Du arbeitest alleine und ohne Hilfsmittel (also keinen Dictionnaire).<p>' +
+        '<p>Alles klar? Falls du Fragen hast, frage unbedingt bei deiner Lehrperson nach.<p></div>'
+        ],
+
+        show_clickable_nav: true,
+        button_label_next: 'prochain',
+        allow_backward: false,
+    };
+
+
+    let yesNo = ['oui', 'non'];
+    var audioInstructions = {
+        timeline: [{
+            type: 'audio-button-response',
+            stimulus: function () {
+                return jsPsych.timelineVariable('audioAvecArticle', true);
+            },
+            prompt: function () {
+                return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
+                    'Kennst du diesen Ausdruck?<br><br>';
+            },
+            on_finish: function(data){
+                data.frenchWord = jsPsych.timelineVariable('text', true);
+                data.textKnown = yesNo[data.button_pressed];
+                data.category =  jsPsych.timelineVariable('category', true);
+                data.type = jsPsych.timelineVariable('type', true);
+            },
+
+            choices: yesNo,
+            response_allowed_while_playing: responseAllowedWhilePlaying
+        }],
+        // loop_function: loopFunction,
+        timeline_variables: motsCiblesFilmDGroup2.concat(nonWordsShort),
+        randomize_order: true
+    };
+
+    // LEA ENDE
+    jsPsych.init({
+        //LEA START
+        preload_audio: motsCiblesFilmDGroup2AvecArticlePreload.concat(nonWordsPreload),
+        timeline: [einleitungPilot, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
+        //LEA ENDE
+        on_finish: function () {
+            jsPsych.data.displayData();
+            sendData("Pilote2", jsPsych.data.get().json(true));
+        }
+    });
+
+</script>
+</html>
