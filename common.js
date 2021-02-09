@@ -426,7 +426,7 @@ function shuffle(array) {
 }
 
 let loopFunction = function (data) {
-    return data.values()[0].button_pressed === 1;
+    return data.values()[0].button_pressed === 0;
 };
 
 function getParamOrElse(param, elseValue) {

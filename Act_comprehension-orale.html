@@ -8,6 +8,7 @@
     <script src="plugins/jspsych-instructions.js"></script>
     <script src="plugins/jspsych-survey-text.js"></script>
     <script src="plugins/jspsych-audio-button-response.js"></script>
+    <script src="plugins/jspsych-html-button-response.js"></script>
     <script src="common.js"></script>
     <link rel="stylesheet" href="css/jspsych.css">
     <link rel="stylesheet" href="css/jspsych-custom-styles.css">
@@ -20,62 +21,30 @@
     // LEA start
     var einleitungfragen = {
         type: 'instructions',
-        pages: ['<div class="left"><p>Verbinde deinen Kopfhörer. Du hörst nun ein Telefongespräch, in dem es um einen Schwimmkurs geht. Höre den Text und beantworte die Fragen. Bereit? Klicke auf On y va.</p></div>'],
+        pages: ['<div class="left"><p>Verbinde deinen Kopfhörer. Höre den Text L’ANNIVERSAIRE und beantworte die Fragen. Bereit? Klicke auf On y va.</p></div>'],
         show_clickable_nav: true,
         allow_backward: false,
         button_label_next: 'On y va',
     };
 
-    var quest1 = [
-        {question: '1. Qui aimerait apprendre à nager ?', solution: 'le fils de M. Bernin'},
-        {question: '2. Quel âge a la personne qui aimerait apprendre à nager ?', solution: '8 ans'},
-        {question: '3. Combien d’enfants a M. Bernin ?', solution: '2 fils'},
-        {question: '4. Combien de personnes sont dans un groupe de natation ?', solution: 'deux par bassin'},
-        {question: '5. Quel est le prix pour le cours de natation en particulier ?', solution: '30 euros'},
-    ];
-    var quest2 = [
-        {question: '6. Combien de temps dure une leçon ?', solution: '20 minutes'},
-        {question: '7. Quel est le minimum de leçons que propose Mme Geoire ?', solution: '4 leçons'},
-        {question: '8. Quand est-ce qu’il pourra commencer le premier cours de natation ?', solution: 'la semaine prochaine'},
-    ];
-    var quest3 = [
-        {question: '9. Quel jour est complet ?', solution: 'jeudi'},
-        {question: '10. À quelle heure aura lieu le cours de natation vendredi ?', solution: 'à 12.30 (midi et demi)'},
-        {question: '11. Quand va M. Bernin payer le cours ?', solution: 'cet après-midi'},
-        {question: '12. Comment s’appelle la personne qui va apprendre à nager ?', solution: 'Luca'},
-    ];
+    let choice1 = ['samedi', 'vendredi', 'jeudi'];
+    let choice2 = ['à 9h', 'à 19h', 'à 21h'];
+    let choice3 = ['au théâtre', 'au cinéma', 'au restaurant'];
+    let choice4 = ['un gâteau au chocolat', 'un gâteau aux noisettes', 'un gâteau au citron'];
+    let choice5 = ['du thé froid', 'de l’orangina', 'du coca'];
+    let choice6 = ['Sandra', 'Josiane', 'Olivier'];
 
+    var quest1 = [
+        {question: '1.	Hélène fête son anniversaire quel jour ?', choice: shuffle([...choice1]), solution: 'samedi'},
+        {question: '2.	À quelle heure elle invite ses amis ?', choice: shuffle([...choice2]), solution: 'à 9h'},
+        {question: '3.	Où vont les parents de Hélène ?', choice: shuffle([...choice3]), solution: 'au théâtre'},
+        {question: '4.	Quel gâteau apporte Josiane ?', choice: shuffle([...choice4]), solution: 'un gâteau au chocolat'},
+        {question: '5.	Quelle boisson Olivier n’apporte PAS pour la fête ?', choice: shuffle([...choice5]), solution: 'du thé froid'},
+        {question: '6.	Qui va s’occuper de la musique ?', choice: shuffle([...choice6]), solution: 'Sandra'},
+    ];
 
     const quest1Text = quest1.map(item => {
         return "<p>" + item.question + "</p>"
-    });
-    const quest2Text = quest2.map(item => {
-        return "<p>" + item.question + "</p>"
-    });
-    const quest3Text = quest3.map(item => {
-        return "<p>" + item.question + "</p>"
-    });
-
-    function makeQuestion(item) {
-        var pos = item.question.indexOf(".")
-        var name = 'q' + item.question.substr(0, pos - 1)
-        return {
-            prompt: '<h1></h1><div class="left"><p>' + item.question + '</p></div>',
-            columns: 20,
-            required: true,
-            name: +name,
-            //solution: item.solution
-        }
-    }
-
-    const quest1Question = quest1.map(item => {
-        return makeQuestion(item);
-    });
-    const quest2Question = quest2.map(item => {
-        return makeQuestion(item);
-    });
-    const quest3Question = quest3.map(item => {
-        return makeQuestion(item);
     });
 
     var einleitungQuest1 = {
@@ -85,81 +54,44 @@
         allow_backward: false,
         button_label_next: 'On y va',
     };
-    var einleitungQuest2 = {
-        type: 'instructions',
-        pages: ['<h1>Lis les questions.</h1><div class="left">' + quest2Text.join("") + '</div>'],
-        show_clickable_nav: true,
-        allow_backward: false,
-        button_label_next: 'On y va',
-    };
-    var einleitungQuest3 = {
-        type: 'instructions',
-        pages: ['<h1>Lis les questions.</h1><div class="left">' + quest3Text.join("") + '</div>'],
-        show_clickable_nav: true,
-        allow_backward: false,
-        button_label_next: 'On y va',
-    };
 
     var audioInstructions1 = {
         timeline: [{
             type: 'audio-button-response',
-            stimulus: 'sound/comprehension-orale/cours-de-natation-1.mp3',
+            stimulus: 'sound/comprehension-orale/anniversaire.m4a',
             prompt: '<h1>Écoute.</h1>' +
                     'Merke dir die Antworten! Klicke erst auf "prochain", wenn du den Text gehört hast. Die Antworten musst du zu einem späteren Zeitpunkt eingeben.' +
                 '<div class="left">' + quest1Text.join("") + '</div>',
-            choices: ['prochain', 'répéter'],
+            choices: ['répéter', 'prochain'],
             // response_allowed_while_playing: false,
         }],
         loop_function: loopFunction,
     };
-    var audioInstructions2 = {
-        timeline: [{
-            type: 'audio-button-response',
-            stimulus: 'sound/comprehension-orale/cours-de-natation-2.mp3',
-            prompt: '<h1>Écoute.</h1>' +
-                'Merke dir die Antworten! Klicke erst auf "prochain", wenn du den Text gehört hast. Die Antworten musst du zu einem späteren Zeitpunkt eingeben.' +
-                '<div class="left">' + quest2Text.join("") + '</div>',
-            choices: ['prochain', 'répéter'],
-            // response_allowed_while_playing: false,
-        }],
-        loop_function: loopFunction,
-    };
-
-    var audioInstructions3 = {
-        timeline: [{
-            type: 'audio-button-response',
-            stimulus: 'sound/comprehension-orale/cours-de-natation-3.mp3',
-            prompt: '<h1>Écoute.</h1>' +
-                'Merke dir die Antworten! Klicke erst auf "prochain", wenn du den Text gehört hast. Die Antworten musst du zu einem späteren Zeitpunkt eingeben.' +
-                '<div class="left">' + quest3Text.join("") + '</div>',
-            choices: ['prochain', 'répéter'],
-            // response_allowed_while_playing: false,
-        }],
-        loop_function: loopFunction,
-    };
-
-    //<h2>Beantworte die Fragen auf Deutsch oder Französisch:</h2>
 
     var oralFragen1 = {
-        type: 'survey-text',
-        questions: quest1Question,
-        button_label: 'prochain >',
+        timeline: [{
+            type: 'html-button-response',
+            stimulus: function () {
+                return "<h2>" + jsPsych.timelineVariable('question', true) + "</h2>";
+            },
+            choices: function () {
+                return jsPsych.timelineVariable('choice', true)
+            },
+            prompt: "",
+            on_finish: function(data){
+                let solutionSelected = jsPsych.timelineVariable('choice', true)[data.button_pressed];
+                let correct = jsPsych.timelineVariable('solution', true) === solutionSelected;
+                data.question = jsPsych.timelineVariable('question', true);
+                data.solutionSelected = jsPsych.timelineVariable('solutionSelected', true);
+                data.correct = correct
+            },
+        }],
+        timeline_variables: quest1,
     };
-    var oralFragen2 = {
-        type: 'survey-text',
-        questions: quest2Question,
-        button_label: 'prochain >',
-    };
-    var oralFragen3 = {
-        type: 'survey-text',
-        questions: quest3Question,
-        button_label: 'prochain >',
-    };
-
     // LEA ENDE
     jsPsych.init({
         //LEA START
-        timeline: [einleitung, nameklasse, einleitungfragen, einleitungQuest1, audioInstructions1, oralFragen1, einleitungQuest2, audioInstructions2, oralFragen2, einleitungQuest3, audioInstructions3, oralFragen3, schlusssatzUebung],
+        timeline: [einleitung, nameklasse, einleitungfragen, einleitungQuest1, audioInstructions1, oralFragen1, schlusssatzUebung],
         //LEA ENDE
         on_finish: function () {
             jsPsych.data.displayData();
