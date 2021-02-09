@@ -21,9 +21,7 @@
 
     var einleitungfragen = {
         type: 'instructions',
-        pages: ['<div class="">Du wirst gleich ein paar Wortschatzübungen machen. Zuerst wirst du ein paar Zahlen hören. Verbinde also deinen Kopfhörer.<br>' +
-        'Bereit?<br>' +
-        'Knopf: On y va!<br></div>'],
+        pages: ['<div class="">Du wirst gleich ein paar Rechnungen auf Französisch hören. Klicke jeweils auf die korrekte Lösung. Verbinde also deinen Kopfhörer. Bereit?<br><br></div>'],
 
         show_clickable_nav: true,
         allow_backward: false,
@@ -110,14 +108,14 @@
             },
             prompt: function () {
                 return '<h1>' + jsPsych.timelineVariable('text', true) + '</h1>' +
-                    'Klicke auf die richtige Lösung:<br><br>';
+                    'Klicke auf die richtige Lösung.<br><br>';
             },
             choices: function () {
                 return jsPsych.timelineVariable('solution', true);
             },
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
-        timeline_variables: calculations,
+        timeline_variables: shuffle([...calculations]).slice(0,30),
         randomize_order: true
     };
 
@@ -125,7 +123,7 @@
     jsPsych.init({
         //LEA START
         preload_audio: calculationsPreload,
-        timeline: [/*einleitung, nameklasse,*/ einleitungfragen, audioInstructions, schlusssatzUebung],
+        timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
         //LEA ENDE
         on_finish: function () {
             jsPsych.data.displayData();
