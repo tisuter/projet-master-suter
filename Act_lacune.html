@@ -65,6 +65,24 @@
         { word: 'gla_e, &nbsp;&nbsp;&nbsp; pla_e', solution: 'c'},
         { word: '_illet, &nbsp;&nbsp;&nbsp; a_ricot', solution: 'b'}
     ];
+    let choices3 = ['c',' d',' e',' é',' g',' i',' l',' m',' n',' o',' p',' q',' s',' t',' v'];
+    let lacune3Questions = [
+        { word: 'actue_, &nbsp;&nbsp;&nbsp; bou_angerie', solution: 'l'},
+        { word: 'ban_ue, &nbsp;&nbsp;&nbsp; bibliothè_ue', solution: 'q'},
+        { word: 'ba_eau, &nbsp;&nbsp;&nbsp; _able', solution: 't'},
+        { word: '_apitale, &nbsp;&nbsp;&nbsp; _oiffer', solution: 'c'},
+        { word: 'c_urir, &nbsp;&nbsp;&nbsp; t_us', solution: 'o'},
+        { word: '_glise, &nbsp;&nbsp;&nbsp; _tudier', solution: 'é'},
+        { word: '_anser, &nbsp;&nbsp;&nbsp; _emain', solution: 'd'},
+        { word: '_agasin, &nbsp;&nbsp;&nbsp; _alade', solution: 'm'},
+        { word: '_arçon, &nbsp;&nbsp;&nbsp; _entil', solution: 'g'},
+        { word: 'h_stoire, &nbsp;&nbsp;&nbsp; _dée', solution: 'i'},
+        { word: 'lun_ttes, &nbsp;&nbsp;&nbsp; jus d’orang_', solution: 'e'},
+        { word: '_age, &nbsp;&nbsp;&nbsp; _arfum', solution: 'p'},
+        { word: '_ager, &nbsp;&nbsp;&nbsp; _oir', solution: 'n'},
+        { word: 'in_egnant, &nbsp;&nbsp;&nbsp; _ki', solution: 's'},
+        { word: '_acances, &nbsp;&nbsp;&nbsp; télé_ision', solution: 'v'}
+    ];
 
     var lacune1 = {
         timeline: [{
@@ -90,11 +108,23 @@
         }],
         timeline_variables: lacune2Questions,
     };
+    var lacune3 = {
+        timeline: [{
+            type: 'html-button-response',
+            stimulus: function () {
+                return "<h2>" + jsPsych.timelineVariable('word', true) + "</h2>";
+            },
+            choices: choices3,
+            prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
+            randomize_order: true
+        }],
+        timeline_variables: lacune3Questions,
+    };
 
     // LEA ENDE
     jsPsych.init({
         //LEA START
-        timeline: [einleitung, nameklasse, einleitungfragen, lacune1, lacune2, schlusssatzUebung],
+        timeline: [einleitung, nameklasse, einleitungfragen, lacune1, lacune2, lacune3, schlusssatzUebung],
         //LEA ENDE
         on_finish: function () {
             jsPsych.data.displayData();
