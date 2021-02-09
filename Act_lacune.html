@@ -94,6 +94,13 @@
             prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
             randomize_order: true
         }],
+        on_finish: function(data){
+            let letterSelected = choices1[data.button_pressed];
+            let correct = jsPsych.timelineVariable('solution', true) === letterSelected;
+            data.lacune = jsPsych.timelineVariable('word', true);
+            data.letterSelected = letterSelected;
+            data.correct = correct
+        },
         timeline_variables: lacune1Questions,
     };
     var lacune2 = {
@@ -106,6 +113,13 @@
             prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
             randomize_order: true
         }],
+        on_finish: function(data){
+            let letterSelected = choices2[data.button_pressed];
+            let correct = jsPsych.timelineVariable('solution', true) === letterSelected;
+            data.lacune = jsPsych.timelineVariable('word', true);
+            data.letterSelected = letterSelected;
+            data.correct = correct
+        },
         timeline_variables: lacune2Questions,
     };
     var lacune3 = {
@@ -118,6 +132,13 @@
             prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
             randomize_order: true
         }],
+        on_finish: function(data){
+            let letterSelected = choices3[data.button_pressed];
+            let correct = jsPsych.timelineVariable('solution', true) === letterSelected;
+            data.lacune = jsPsych.timelineVariable('word', true);
+            data.letterSelected = letterSelected;
+            data.correct = correct
+        },
         timeline_variables: lacune3Questions,
     };
 
