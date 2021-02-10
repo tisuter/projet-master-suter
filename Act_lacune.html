@@ -92,7 +92,6 @@
             },
             choices: choices1,
             prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
-            randomize_order: true
         }],
         on_finish: function(data){
             let letterSelected = choices1[data.button_pressed];
@@ -101,7 +100,7 @@
             data.letterSelected = letterSelected;
             data.correct = correct
         },
-        timeline_variables: lacune1Questions,
+        timeline_variables: shuffle([...lacune1Questions]).slice(0,12),
     };
     var lacune2 = {
         timeline: [{
@@ -111,7 +110,6 @@
             },
             choices: choices2,
             prompt: "<p>Finde den fehlenden Buchstaben für _</p>",
-            randomize_order: true
         }],
         on_finish: function(data){
             let letterSelected = choices2[data.button_pressed];
@@ -120,7 +118,7 @@
             data.letterSelected = letterSelected;
             data.correct = correct
         },
-        timeline_variables: lacune2Questions,
+        timeline_variables: shuffle([...lacune2Questions]).slice(0,12),
     };
     var lacune3 = {
         timeline: [{
@@ -139,7 +137,7 @@
             data.letterSelected = letterSelected;
             data.correct = correct
         },
-        timeline_variables: lacune3Questions,
+        timeline_variables: shuffle([...lacune3Questions]).slice(0,12),
     };
 
     // LEA ENDE
