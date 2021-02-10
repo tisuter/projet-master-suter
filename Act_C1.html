@@ -60,11 +60,13 @@
     jsPsych.init({
         //LEA START
         preload_audio: motsCiblesFilmCVSansArticlear2Preload,
-        timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions, schlusssatzUebung],
+        timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions],
         //LEA ENDE
         on_finish: function () {
-            jsPsych.data.displayData();
             sendData("Act_C1", jsPsych.data.get().json(true));
+            jsPsych.data.displayData();
+            $("#jspsych-data-display").empty();
+            $("#jspsych-data-display").prepend('<h2>Merci beaucoup! Du hast die Übungen erfolgreich abgeschlossen. <a href="index.html">Hier gehts zurück.</a></h2>');
         }
     });
 
