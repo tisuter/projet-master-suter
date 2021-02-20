@@ -28,20 +28,37 @@
     };
 
     let choice1 = ['samedi', 'vendredi', 'jeudi'];
-    let choice2 = ['à 9h', 'à 19h', 'à 21h'];
-    let choice3 = ['au théâtre', 'au cinéma', 'au restaurant'];
-    let choice4 = ['un gâteau au chocolat', 'un gâteau aux noisettes', 'un gâteau au citron'];
-    let choice5 = ['du thé froid', 'de l’orangina', 'du coca'];
-    let choice6 = ['Sandra', 'Josiane', 'Olivier'];
+    let choice2 = ['chez elle', 'dans une boîte (discothèque)', 'au parc'];
+    let choice3 = ['à 21h', 'à 9h', 'à 19h'];
+    let choice4 = ['au théâtre', 'au cinéma', 'au restaurant'];
+    let choice5 = ['un gâteau au chocolat', 'un gâteau aux noisettes', 'un gâteau au citron'];
+    let choice6 = ['du thé froid', 'de l’orangina', 'du coca'];
+    let choice7 = ['Sandra', 'Josiane', 'Olivier'];
+    let choice8 = ['CDs et cassettes', 'DJ et radio', 'TV et cassettes'];
+    let choice9 = ['à La Rochelle', 'à La Chaux-de-fonds', 'à Rennes'];
 
     var quest1 = [
-        {question: '1. Hélène fête son anniversaire quel jour ?', choice: shuffle([...choice1]), solution: 'samedi'},
-        {question: '2. À quelle heure elle invite ses amis ?', choice: shuffle([...choice2]), solution: 'à 9h'},
-        {question: '3. Où vont les parents de Hélène ?', choice: shuffle([...choice3]), solution: 'au théâtre'},
-        {question: '4. Quel gâteau apporte Josiane ?', choice: shuffle([...choice4]), solution: 'un gâteau au chocolat'},
-        {question: '5. Quelle boisson Olivier n’apporte PAS pour la fête ?', choice: shuffle([...choice5]), solution: 'du thé froid'},
-        {question: '6. Qui va s’occuper de la musique ?', choice: shuffle([...choice6]), solution: 'Sandra'},
+        {question: '1. Quel jour Hélène fête son anniversaire?', choice: shuffle([...choice1]), solution: 'samedi'},
+        {question: '2. Où Hélène va-t-elle fêter son anniversaire ?', choice: shuffle([...choice2]), solution: 'chez elle'},
+        {question: '3. À quelle heure invite-t-elle ses amis ?', choice: shuffle([...choice3]), solution: 'à 21h'},
+        {question: '4. Où vont les parents d’Hélène ?', choice: shuffle([...choice4]), solution: 'au théâtre'},
+        {question: '5. Quel gâteau apporte Josiane ?', choice: shuffle([...choice5]), solution: 'un gâteau au chocolat'},
+        {question: '6. Quelle boisson Pierre n’apporte-t-il PAS pour la fête ?', choice: shuffle([...choice6]), solution: 'du thé froid'},
+        {question: '7. Qui va s’occuper de la musique ?', choice: shuffle([...choice7]), solution: 'Sandra'},
+        {question: '8. Comment vont-ils écouter de la musique ?', choice: shuffle([...choice8]), solution: 'CDs et cassettes'},
+        {question: '9. Où va Olivier ?', choice: shuffle([...choice9]), solution: 'à La Rochelle'},
     ];
+
+    function checkAllChoicesInclude(listOfWords) {
+        for (i = 0; i < listOfWords.length; i++) {
+            let element = listOfWords[i];
+            if(!element.choice.includes(element.solution)) {
+                throw element.text + " should have a solution (" + element.solution + ") in choice (" + element.translation + ")";
+            }
+        }
+    }
+
+    checkAllChoicesInclude(quest1);
 
     const quest1Text = quest1.map(item => {
         return "<p>" + item.question + "</p>"
@@ -63,7 +80,7 @@
                     'Merke dir die Antworten! Klicke erst auf "prochain", wenn du den Text gehört hast. Die Antworten musst du zu einem späteren Zeitpunkt eingeben.' +
                 '<div class="left">' + quest1Text.join("") + '</div>',
             choices: ['répéter', 'prochain'],
-            // response_allowed_while_playing: false,
+            response_allowed_while_playing: responseAllowedWhilePlaying,
         }],
         loop_function: loopFunction,
     };
