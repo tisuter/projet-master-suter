@@ -370,13 +370,29 @@ numbers = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12
 function getForm(klasse, group) {
     if (window.location.href.toLowerCase().includes("localhost")) {
         //local testing
-        return "mbjpwdqq"
+        return "mbjpwdqq";
     }
 
     if (klasse.toLowerCase() === "3d") {
-        return "mleovnye"
+        return "mleovnye";
     }
     if (klasse.toLowerCase() === "2a") {
+        return "mwkwjybg";
+    }
+    if (klasse.toLowerCase() === "2b") {
+        return "mrgovjlz";
+    }
+    if (klasse.toLowerCase() === "2c") {
+        return "xbjpewkj";
+    }
+    if (klasse.toLowerCase() === "2d") {
+        return "mnqoywzn";
+    }
+    if (klasse.toLowerCase() === "2f") {
+        return "xjvpdlog";
+    }
+    if (klasse.toLowerCase() === "2g") {
+        return "mdopvbde";
     }
 
     return "xgepqloj";
