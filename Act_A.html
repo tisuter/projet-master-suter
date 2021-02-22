@@ -64,9 +64,20 @@
             choices: yesNo,
             response_allowed_while_playing: responseAllowedWhilePlaying,
             on_finish: function(data){
+
+                data.isTW
                 data.frenchWord = jsPsych.timelineVariable('text', true);
                 data.wordKnown = yesNo[data.button_pressed];
                 data.isTW = jsPsych.timelineVariable('isTW', true);
+                if (data.wordKnown === 'oui' && data.isTW) {
+                    data.score = 1
+                } else {
+                    if (data.wordKnown === 'oui' && !data.isTW) {
+                        data.score = -2
+                    } else {
+                        data.score = 0;
+                    }
+                }
             },
         }],
 
