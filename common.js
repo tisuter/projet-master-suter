@@ -150,11 +150,11 @@ let lexTaleAudioFiles = [
 ];
 
 var b1Adjectifs1 = ['verrückt', 'widerlich', 'draussen', 'kalt', 'verzweifelt'];
-var b1Adjectifs2 = ['übrigens', 'ansonsten', 'ehrlich', 'manchmal', 'ganz'];
-var b1NomPl = ['die Schlüssel', 'die Kinder', 'die Listen', 'die Mücken', 'die Fische'];
-var b1NomSg = ['die Gemeinschaftskasse', 'die Schwere', 'der Typ', 'der Meter', 'die Verletzung'];
-var b1Verbes1 = ['abgelehnt', 'keine Sorge', 'auserwählt', 'geweint', 'Ruhe bitte'];
-var b1Verbes2 = ['es klingelt', 'man isst', 'Halt’s Maul', 'es schneit', 'man klatscht'];
+var b1Adjectifs2 = ['übrigens', 'ansonsten', 'ehrlich', 'manchmal', 'trotzdem'];
+var b1NomPl = ['die Schlüssel', 'die Kinder', 'die Vermieter', 'die Vereine', 'die Unterlagen'];
+var b1NomSg = ['die Gemeinschaftskasse', 'die Schwere', 'der Typ', 'das Loch', 'die Verletzung'];
+var b1Verbes1 = ['abgelehnt', 'keine Sorge', 'gesperrt', 'geweint', 'Vorsicht bitte'];
+var b1Verbes2 = ['es klingelt', 'man isst', 'Halt’s Maul', 'es schaut aus', 'man klatscht'];
 
 let motsCiblesFilmB = [
     {category: "TW", type: 'adjectif&co', translation: shuffle([...b1Adjectifs1]), text: 'fou', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-fou.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-fou.m4a', sentence: '<p>Maintenant, dans les boîtes de Weetabix, y en a 16. Avant, il y en avait genre 32, parfois même 34. C’est <b>fou</b>, non ?</p>', solution: "verrückt"},
@@ -174,8 +174,8 @@ let motsCiblesFilmB = [
     {category: "TW", type: 'nomSg', translation: shuffle([...b1NomSg]), text: 'le mec', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-mec.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-mec.m4a', sentence: '<p>C\'était cool de passer un moment avec ce <b>mec</b>.</p>', solution: "der Typ"},
 
     {category: "TW", type: 'verbesIndef', translation: shuffle([...b1Verbes1]), text: 'refusée', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-refusee.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-refusee.m4a', sentence: '<p>Ta carte a été <b>refusée</b>.</p>', solution: "abgelehnt"},
-
     {category: "TW", type: 'verbesConjug', translation: shuffle([...b1Verbes1]), text: 't’inquiète', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-inquiete.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-inquiete.m4a', sentence: '<p>-Je vais voir ce qu\'il me reste.</p><p>- Non, c\'est bon, <b>t\'inquiète</b>.</p>', solution: "keine Sorge"},
+
     {category: "TW", type: 'verbesConjug', translation: shuffle([...b1Verbes2]), text: 'ça sonne', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-sonne.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-sonne.m4a', sentence: '<p>- Ça sonne, <b>ça sonne</b>. C\'est elle !</p><p>- Je lui dis quoi, moi ?</p>', solution: "es klingelt"},
     {category: "TW", type: 'verbesConjug', translation: shuffle([...b1Verbes2]), text: 'ça se bouffe', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-bouffe.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-bouffe.m4a', sentence: '<p><b>Ça se bouffe</b> pas avec du lait ton truc ?</p>', solution: "man isst"},
     {category: "TW", type: 'verbesConjug', translation: shuffle([...b1Verbes2]), text: 'ta gueule', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-gueule.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-gueule.m4a', sentence: '<p>-<b>Ta gueule</b> ! Changement d\'adresse. Qu\'est-ce que tu veux...</p><p>- Ta gueule !</p>', solution: "Halt’s Maul"},
