@@ -181,42 +181,36 @@ let motsCiblesFilmB = [
     {category: "TW", type: 'verbesConjug', translation: shuffle([...b1Verbes2]), text: 'ta gueule', audioAvecArticle: 'sound/mots-cibles/avec-articles/01-gueule.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/01-gueule.m4a', sentence: '<p>-<b>Ta gueule</b> ! Changement d\'adresse. Qu\'est-ce que tu veux...</p><p>- Ta gueule !</p>', solution: "Halt’s Maul"},
 ];
 
-var c1Adjectifs = ['verschwommen', 'allerletzte', 'schmutzig', 'falls/so/doch', 'noch', 'nie', 'denn', 'ausser', 'defekt', 'ohne', 'keine'];
-var c1NomPl = ['die Hackfleischbällchen', 'die Dummheiten', 'die Schränke'];
-var c1NomSg = ['der Ort', 'der Tropfen', 'die Kacke', 'der Freund', 'das Vertrauen', 'das Ding', 'die Tüte', 'die Gabel'];
-var c1VerbesConjug = ['ich gestehe', 'du meinst', 'keine Sorge', 'leite weiter', 'versende', 'ihr verheimlicht', 'es ist uns egal', 'ihr verräumt', 'ich zünde an', 'wir lachen'];
-var c1VerbesIndef  = ['(an)lügen', 'getötet', 'aussteigen', 'geschlagen'];
+var c1Adjectifs = ['verschwommen', 'allerletzte', 'ausser', 'lachhaft', 'niemand'];
+var c1NomPl = ['die Hackfleischbällchen', 'die Dummheiten', 'die Schwächen', 'die Kräuter', 'die Pfannen'];
+var c1NomSg1 = ['der Ort', 'das Vertrauen', 'das Ding', 'die Aufmerksamkeit', 'das Kompliment'];
+var c1NomSg2 = ['der Tropfen', 'die Kacke', 'der Freund', 'der Lappen', 'der Sohn'];
+var c1Verbes1  = ['(an)lügen', 'getötet', 'versende', 'gefangen', 'trenne'];
+var c1Verbes2 = ['ich gestehe', 'keine Sorge', 'es ist uns egal', 'keine Ahnung', 'ich füge hinzu'];
 
 let motsCiblesFilmC = [
     {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'flou', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-flou.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-flou.m4a', sentence: '<p>Pourquoi j\'arrive pas à rester propre comme toutes ces filles avec leur petit carré <b>flou</b> parfait, leur petit slim noir sans plis...</p>', solution: 'verschwommen'},
     {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'ultime', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-ultime.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-ultime.m4a', sentence: '<p>C\'est ma passion <b>ultime</b>, les boulettes !</p>', solution: 'allerletzte'},
-    {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'sale', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-sale.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-sale.m4a', sentence: '<p>Je suis négligée, je suis dégueulasse. Même propre, je fais <b>sale</b>.</p>', solution: 'schmutzig'},
-    {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'si', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-si.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-si.m4a', sentence: '<p>T\'es <b>si </b>jolie que j\'en oublie que ton pull est dégueulasse.</p>', solution: 'falls/so/doch'},
-    {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'encore', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-encore.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-encore.m4a', sentence: '<p>Antoine croit <b>encore </b>que tu vas au yoga prénatal ?</p>', solution: 'noch'},
-    {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'jamais', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-jamais.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-jamais.m4a', sentence: '<p>Ce sera <b>jamais </b>fini avant l\'arrivée du bébé.</p>', solution: 'nie'},
-    {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'car', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-car.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-car.m4a', sentence: '<p>Et t\'attends pas à un cadeau commun <b>car </b>personne a mis sur la cagnotte</p>', solution: 'denn'},
     {category: "TW", type: 'adjectif&co', translation: shuffle([...c1Adjectifs]), text: 'sauf', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-sauf.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-sauf.m4a', sentence: '<p>- Non, mais... je vois tout <b>sauf</b> quelqu\'un de bidon, moi.</p><p>- T\'es magnifique.</p>', solution: 'ausser'},
 
-    {category: "TW", type: 'nomPl', translation: shuffle([...c1NomPl]), text: 'les boulettes', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-boulettes.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-boulettes.m4a', sentence: '<p>Des sandwichs <b>aux boulettes</b> ? </p><p>– Oui.</p>', solution: 'die Hackfleischbällchen'},
-    {category: "TW", type: 'nomPl', translation: shuffle([...c1NomPl]), text: 'les conneries', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-conneries.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-conneries.m4a', sentence: '<p>- Je comprends rien au texto. Tiens.</p><p>- Envoie pas <b>de conneries</b>. </p>', solution: 'die Dummheiten'},
+    {category: "TW", type: 'nomPl', translation: shuffle([...c1NomPl]), text: 'les boulettes', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-boulettes.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-boulettes.m4a', sentence: '<p>- Des sandwichs aux <b>boulettes</b> ? </p><p>– Oui.</p>', solution: 'die Hackfleischbällchen'},
+    {category: "TW", type: 'nomPl', translation: shuffle([...c1NomPl]), text: 'les conneries', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-conneries.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-conneries.m4a', sentence: '<p>- Je comprends rien au texto. Tiens.</p><p>- Envoie pas de <b>conneries</b>. </p>', solution: 'die Dummheiten'},
 
-    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg]), text: 'l\'endroit', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-endroit.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-endroit.m4a', sentence: '<p>On a pas <b>d\'endroit</b> pour faire ton anniversaire.</p>', solution: 'der Ort'},
-    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg]), text: 'la goutte', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-goutte.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-goutte.m4a', sentence: '<p>- Vas-y, la petite touche pro : maïs, donut, <b>goutte</b>, <b>goutte</b>. Terminé.</p>', solution: 'der Tropfen'},
-    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg]), text: 'la crotte', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-crotte.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-crotte.m4a', sentence: '<p>- Il m\'a répondu !</p><p>- Ça dit quoi ? </p><p>- Alien, alien, <b>crotte</b>, bébé.</p>', solution: 'die Kacke'},
-    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg]), text: 'le pote', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-pote.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-pote.m4a', sentence: '<p>C\'est la <b>pote </b>d\'Elsa qui me l\'a filé pour être dans le perso.</p>', solution: 'der Freund'},
-    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg]), text: 'la confiance', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-confiance.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-confiance.m4a', sentence: '<p>- C\'est une surprise ?</p><p>- T\'as <b>confiance</b> en moi?</p>', solution: 'das Vertrauen'},
-    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg]), text: 'le truc', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-truc.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-truc.m4a', sentence: '<p>Vous me cachez <b>un truc</b> ou quoi ?</p>', solution: 'das Ding'},
+    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg1]), text: 'l\'endroit', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-endroit.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-endroit.m4a', sentence: '<p>On a pas d\'<b>endroit</b> pour faire ton anniversaire.</p>', solution: 'der Ort'},
+    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg1]), text: 'la confiance', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-confiance.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-confiance.m4a', sentence: '<p>- C\'est une surprise ?</p><p>- T\'as <b>confiance</b> en moi?</p>', solution: 'das Vertrauen'},
+    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg1]), text: 'le truc', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-truc.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-truc.m4a', sentence: '<p>Vous me cachez un <b>truc</b> ou quoi ?</p>', solution: 'das Ding'},
 
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1VerbesConjug]), text: 'j’avoue', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-avoue.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-avoue.m4a', sentence: '<p>Bon, OK, <b>j\'avoue</b>. Je venais ici, petit.</p>', solution: 'ich gestehe'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1VerbesConjug]), text: 'tu crois', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-crois.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-crois.m4a', sentence: '<p>- Et le père Noël, c\'est pour dire que t\'es un cadeau du ciel.</p><p>- <b>Tu crois </b>? </p>', solution: 'du meinst'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1VerbesConjug]), text: 't’inquiète', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-inquiete.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-inquiete.m4a', sentence: '<p>- Tu m\'en veux pas, hein ? </p><p>- Non, <b>t\'inquiète</b>.</p>', solution: 'keine Sorge'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1VerbesConjug]), text: 'vous cachez', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-cachez.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-cachez.m4a', sentence: '<p>- Qu\'est-ce qui se passe ? Vous êtes trop cheloues ce soir.</p><p>- Vous me <b>cachez</b> un truc ou quoi ?</p>', solution: 'ihr verheimlicht'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1VerbesConjug]), text: 'on s’en fout', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-fout.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-fout.m4a', sentence: '<p><b>On s\'en fout</b> ! Réponds. Sinon, ça fait la meuf qui attend pour répondre.</p>', solution: 'es ist uns egal'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1VerbesConjug]), text: 'envoie', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-envoie.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-envoie.m4a', sentence: '<p><b>Envoie</b> juste un texto.</p>', solution: 'versende'},
-    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1VerbesConjug]), text: 'transfère', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-transfere.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-transfere.m4a', sentence: '<p>- Vas-y, la petite touche pro : maïs, donut, goutte, goutte. Terminé. <b>Transfère</b>.</p><p>- Il m\'a répondu !</p>', solution: 'leite weiter'},
+    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg2]), text: 'la goutte', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-goutte.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-goutte.m4a', sentence: '<p>- Vas-y, la petite touche pro : maïs, donut, <b>goutte</b>, <b>goutte</b>. Terminé.</p>', solution: 'der Tropfen'},
+    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg2]), text: 'la crotte', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-crotte.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-crotte.m4a', sentence: '<p>- Il m\'a répondu !</p><p>- Ça dit quoi ? </p><p>- Alien, alien, <b>crotte</b>, bébé.</p>', solution: 'die Kacke'},
+    {category: "TW", type: 'nomSg', translation: shuffle([...c1NomSg2]), text: 'le pote', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-pote.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-pote.m4a', sentence: '<p>C\'est le <b>pote </b>d\'Elsa qui me l\'a filé pour être dans le perso.</p>', solution: 'der Freund'},
 
-    {category: "TW", type: 'verbesIndef', translation: shuffle([...c1VerbesIndef]), text: 'mentir', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-mentir.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-mentir.m4a', sentence: '<p>C\'est pour savoir si je dois continuer <b>mentir</b> à mon frère sur ton congé.</p>', solution: '(an)lügen'},
-    {category: "TW", type: 'verbesIndef', translation: shuffle([...c1VerbesIndef]), text: 'tué', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-tue.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-tue.m4a', sentence: '<p>Le gars qui a <b>tué</b> cette fille rencontrée sur Tinder.  </p>', solution: 'getötet'},
+    {category: "TW", type: 'verbesIndef', translation: shuffle([...c1Verbes1]), text: 'mentir', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-mentir.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-mentir.m4a', sentence: '<p>C\'est pour savoir si je dois continuer <b>mentir</b> à mon frère sur ton congé.</p>', solution: '(an)lügen'},
+    {category: "TW", type: 'verbesIndef', translation: shuffle([...c1Verbes1]), text: 'tué', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-tue.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-tue.m4a', sentence: '<p>Le gars qui a <b>tué</b> cette fille rencontrée sur Tinder.  </p>', solution: 'getötet'},
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1Verbes1]), text: 'envoie', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-envoie.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-envoie.m4a', sentence: '<p><b>Envoie</b> juste un texto.</p>', solution: 'versende'},
+
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1Verbes2]), text: 'j’avoue', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-avoue.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-avoue.m4a', sentence: '<p>Bon, OK, <b>j\'avoue</b>. Je venais ici, petit.</p>', solution: 'ich gestehe'},
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1Verbes2]), text: 't’inquiète', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-inquiete.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-inquiete.m4a', sentence: '<p>- Tu m\'en veux pas, hein ? </p><p>- Non, <b>t\'inquiète</b>.</p>', solution: 'keine Sorge'},
+    {category: "TW", type: 'verbesConjug', translation: shuffle([...c1Verbes2]), text: 'on s’en fout', audioAvecArticle: 'sound/mots-cibles/avec-articles/02-fout.m4a', audioSansArticle: 'sound/mots-cibles/sans-articles/02-fout.m4a', sentence: '<p><b>On s\'en fout</b> ! Réponds. Sinon, ça fait la meuf qui attend pour répondre.</p>', solution: 'es ist uns egal'},
 ];
 
 var d1Adjectifs = ['ernst', 'neugierig', 'mühsam', 'bereit', 'jetzt', 'so/derart', 'nichts', 'aber', 'mit', 'scheu', 'gestern', 'fast'];
@@ -258,7 +252,6 @@ let motsCiblesFilmD = [
 ];
 
 let motsCiblesFilmDGroup2 = [
-
     {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'devant', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-devant.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-devant.m4a', sentence: '<p>tbd</p>'},
     {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'durs', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-durs.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-durs.m4a', sentence: '<p>tbd</p>'},
     {category: "TW", type: "adjectif&co", translation: shuffle([...d1Adjectifs]), text: 'enfin', audioAvecArticle: 'sound/mots-cibles/episode-3/avec-article/03-enfin.m4a', audioSansArticle: 'sound/mots-cibles/episode-3/sans-article/03-enfin.m4a', sentence: '<p>tbd</p>'},
@@ -291,6 +284,9 @@ let motsCiblesFilmDGroup2 = [
 checkAllInclude(motsCiblesFilmB);
 checkAllInclude(motsCiblesFilmC);
 checkAllInclude(motsCiblesFilmD);
+check5Include(motsCiblesFilmB);
+check5Include(motsCiblesFilmC);
+// check5Include(motsCiblesFilmD);
 
 let nonWords = [
     { category: "NW", type: 'NW', translation: null, sentence: null, text: 'bondar', audioAvecArticle: 'sound/pseudo-mots/bondar.m4a'},
@@ -466,6 +462,15 @@ function checkAllInclude(listOfWords) {
         let element = listOfWords[i];
         if(!element.translation.includes(element.solution)) {
             throw element.text + " should have a solution (" + element.solution + ") in tranlation (" + element.translation + ")";
+        }
+    }
+}
+
+function check5Include(listOfWords) {
+    for (i = 0; i < listOfWords.length; i++) {
+        let element = listOfWords[i];
+        if(element.translation.length !== 5) {
+            throw "translation of " + element.text + " should have size 5";
         }
     }
 }
