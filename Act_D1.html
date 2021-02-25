@@ -43,6 +43,7 @@
             on_finish: function(data){
                 let germanWordSelected = jsPsych.timelineVariable('translation', true)[data.button_pressed];
                 let correct = jsPsych.timelineVariable('solution', true) === germanWordSelected;
+                data.solution = jsPsych.timelineVariable('solution', true);
                 data.frenchWord = jsPsych.timelineVariable('text', true);
                 data.germanWordSelected = germanWordSelected;
                 data.category =  jsPsych.timelineVariable('category', true);
@@ -63,10 +64,9 @@
         timeline: [einleitung, nameklasse, einleitungfragen, audioInstructions],
         //LEA ENDE
         on_finish: function () {
-            sendData("Act_D1", jsPsych.data.get().json(true));
-            jsPsych.data.displayData();
-            $("#jspsych-data-display").empty();
-            $("#jspsych-data-display").prepend('<h2>Merci beaucoup! Du hast die Übungen erfolgreich abgeschlossen. <a href="index.html">Hier geht es zurück.</a></h2>');
+            let jsonString = jsPsych.data.get().json(true);
+            sendData("Act_D1", jsonString);
+            showSolutionTable(jsonString);
         }
     });
 

@@ -474,3 +474,50 @@ function check5Include(listOfWords) {
         }
     }
 }
+
+function showSolutionTable(jsonString) {
+    jsPsych.data.displayData();
+    $("#jspsych-data-display").empty();
+
+    var table = $('<table class="result"/>'),
+        table_head = $('<thead/>'),
+        head_row = $('<tr class="result"/>'),
+        table_body = $('<tbody/>'),
+        body_row = [];
+
+    head_row.append('<th>Franzöisches Wort</th><th>Gewählte Übersetzung</th><th>Korrekte Übersetzung</th>');
+    var correctCount = 0;
+    var totalCount = 0;
+    $.each(JSON.parse(jsonString), function (index, item) {
+        if (item.trial_type === "audio-button-response") {
+            let solution = "✔";
+            totalCount++;
+            if (item.correct) {
+                correctCount++;
+            } else {
+                solution = "<span class='incorrect'>" + item.solution + "</span>";
+            }
+            body_row[index] = $('<tr class="result"/>');
+
+            body_row[index]
+                .append('<td>' + item.frenchWord + '</td>')
+                .append('<td>' + item.germanWordSelected + '</td>')
+                .append('<td>' + solution + '</td>');
+        }
+    });
+
+    table_head.append(head_row);
+    table_body.append(body_row);
+    table.append(table_head);
+    table.append(table_body);
+    $("#jspsych-content").append('<h2>Merci beaucoup! Du hast die Übungen erfolgreich abgeschlossen.</h2>')
+        .append('<br>')
+        .append('<p>Du hast ' + correctCount + ' von ' + totalCount + ' Ausdrücken richtig übersetzt.</p>')
+        .append('<br>')
+        .append('<p>In der folgenden Tabelle findest du noch die Lösungen.</p>')
+        .append('<br>')
+        .append(table)
+        .append('<br>')
+        .append('<br>')
+        .append('<a href="index.html">Hier geht es zurück.</a>');
+}

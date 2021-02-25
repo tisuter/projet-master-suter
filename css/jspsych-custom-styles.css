@@ -6,3 +6,18 @@
     background-color: #ABBAEA;
     border: 1px solid;
 }
+
+table.result {
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+span.incorrect {
+    color: indianred;
+    font-weight: bold;
+}
+
+tr.result {
+    border-bottom: 1px solid #ccc;
+}
