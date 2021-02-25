@@ -71,14 +71,14 @@
             response_allowed_while_playing: responseAllowedWhilePlaying
         }],
         // loop_function: loopFunction,
-        timeline_variables: motsCiblesFilmDGroup2.concat(nonWordsShort),
+        timeline_variables: motsCiblesFilmD.concat(nonWordsShort),
         randomize_order: true
     };
 
     // LEA ENDE
     jsPsych.init({
         //LEA START
-        preload_audio: motsCiblesFilmDGroup2AvecArticlePreload.concat(nonWordsPreload),
+        preload_audio: motsCiblesFilmDAvecArticlePreload.concat(nonWordsPreload),
         timeline: [einleitungPilot, nameklasse, einleitungfragen, audioInstructions],
         //LEA ENDE
         on_finish: function () {
