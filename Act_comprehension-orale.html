@@ -49,6 +49,16 @@
         {question: '9. Où va Olivier ?', choice: shuffle([...choice9]), solution: 'à La Rochelle'},
     ];
 
+    let choice10 = ['vrai' , 'faux' , 'on ne sait pas'];
+    var quest2 = [
+        {question: '10. Hélène va fêter ses 13 ans.', choice: choice10, solution: 'on ne sait pas'},
+        {question: '11. Les parents d’Hélène n’aiment pas les fêtes.', choice: choice10, solution: 'on ne sait pas'},
+        {question: '12. Pierre aime les gâteaux au chocolat.', choice: choice10, solution: 'vrai'},
+        {question: '13. Olivier est un peu triste de ne pas pouvoir fêter l’anniversaire avec ses amis.', choice: choice10, solution: 'vrai'},
+        {question: '14. Olivier va chez son oncle et sa tante.', choice: choice10, solution:'faux'},
+        {question: '15. Olivier va rester une semaine chez ses grands-parents.', choice: choice10, solution: 'faux'},
+    ];
+
     function checkAllChoicesInclude(listOfWords) {
         for (i = 0; i < listOfWords.length; i++) {
             let element = listOfWords[i];
@@ -59,6 +69,7 @@
     }
 
     checkAllChoicesInclude(quest1);
+    checkAllChoicesInclude(quest2);
 
     const quest1Text = quest1.map(item => {
         return "<p>" + item.question + "</p>"
@@ -105,10 +116,42 @@
         }],
         timeline_variables: quest1,
     };
+
+    var einleitungQuest2 = {
+        type: 'instructions',
+        pages: ['<h1>Vrai, faux, on ne sait pas</h1>' +
+        'Klicke an, ob die Aussage stimmt, falsch ist oder ob es im Text nicht gesagt wird.'],
+        show_clickable_nav: true,
+        allow_backward: false,
+        button_label_next: 'On y va',
+    };
+
+
+    var oralFragen2 = {
+        timeline: [{
+            type: 'html-button-response',
+            stimulus: function () {
+                return "<h2>" + jsPsych.timelineVariable('question', true) + "</h2>";
+            },
+            choices: function () {
+                return jsPsych.timelineVariable('choice', true)
+            },
+            prompt: "",
+            on_finish: function(data){
+                let solutionSelected = jsPsych.timelineVariable('choice', true)[data.button_pressed];
+                let correct = jsPsych.timelineVariable('solution', true) === solutionSelected;
+                data.question = jsPsych.timelineVariable('question', true);
+                data.solutionSelected = jsPsych.timelineVariable('solutionSelected', true);
+                data.correct = correct
+            },
+        }],
+        timeline_variables: quest2,
+    };
+
     // LEA ENDE
     jsPsych.init({
         //LEA START
-        timeline: [einleitung, nameklasse, einleitungfragen, einleitungQuest1, audioInstructions1, oralFragen1],
+        timeline: [einleitung, nameklasse, einleitungfragen, einleitungQuest1, audioInstructions1, oralFragen1, einleitungQuest2, oralFragen2],
         //LEA ENDE
         on_finish: function () {
             sendData("Act_comprehension-orale", jsPsych.data.get().json(true));
