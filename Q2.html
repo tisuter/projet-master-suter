@@ -104,8 +104,7 @@
         on_finish: function () {
             sendData("Q2", jsPsych.data.get().json(true));
             jsPsych.data.displayData();
-            $("#jspsych-data-display").empty();
-            $("#jspsych-data-display").prepend('<h2>Merci beaucoup! Du hast die Fragen erfolgreich beantwortet. <a href="index.html">Hier geht es zurück.</a></h2>');
+            showBackLink();
         }
     });
 

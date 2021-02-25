@@ -475,6 +475,12 @@ function check5Include(listOfWords) {
     }
 }
 
+function showBackLink() {
+    $("#jspsych-data-display").empty();
+    $("#jspsych-content")
+        .append('<h2>Merci beaucoup! Du hast die Übungen erfolgreich abgeschlossen.</h2>')
+        .append('<a href="index.html">Hier geht es zurück.</a>');
+}
 function showSolutionTable(jsonString) {
     jsPsych.data.displayData();
     $("#jspsych-data-display").empty();

@@ -64,8 +64,7 @@
         on_finish: function () {
             sendData("Act_C3", jsPsych.data.get().json(true));
             jsPsych.data.displayData();
-            $("#jspsych-data-display").empty();
-            $("#jspsych-data-display").prepend('<h2>Merci beaucoup! Du hast die Übungen erfolgreich abgeschlossen. <a href="index.html">Hier geht es zurück.</a></h2>');
+            showBackLink();
         }
     });
 
