@@ -9,6 +9,7 @@
     <script src="plugins/jspsych-instructions.js"></script>
     <script src="plugins/jspsych-survey-text.js"></script>
     <script src="plugins/jspsych-survey-likert.js"></script>
+    <script src="plugins/jspsych-survey-multi-select.js"></script>
     <script src="common.js"></script>
     <link rel="stylesheet" href="css/jspsych.css">
     <link rel="stylesheet" href="css/jspsych-custom-styles.css">
@@ -56,6 +57,40 @@
         button_label: 'prochain >',
     };
 
+    var gutGefallen = {
+        type: 'survey-text',
+        questions: [
+            {
+                prompt: '<h2>Was hat dir gut gefallen?</h2>',
+                columns: 150,
+                required: true,
+                name: 'gutGefallen'
+            }
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.gutGefallen = jsonData.gutGefallen;
+        },
+        button_label: 'prochain >',
+    };
+
+    var wenigGefallen = {
+        type: 'survey-text',
+        questions: [
+            {
+                prompt: '<h2>Was hat dir weniger/nicht gefallen?</h2>',
+                columns: 150,
+                required: true,
+                name: 'wenigGefallen'
+            }
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.wenigGefallen = jsonData.wenigGefallen;
+        },
+        button_label: 'prochain >',
+    };
+
     var filmVerstandenOptions = ["gar nicht", "wenig", "manchmal", "gut", "sehr gut"];
     var filmVerstanden = {
         type: 'survey-likert',
@@ -75,12 +110,183 @@
         button_label: 'prochain >',
     };
 
+    var gelesen = ["immer", "meistens", "manchmal", "kaum", "nie"];
+    var untertitelGelesen = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Wie oft hast du die Untertitel gelesen?</h2>',
+                name: 'gelesen',
+                labels: gelesen,
+                required: true
+            },
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.untertitelGelesen = jsonData.gelesen;
+            data.untertitelGelesenValue = gelesen[jsonData.gelesen];
+        },
+        button_label: 'prochain >',
+    };
+
+    var geholfen = ["sehr", "meistens", "manchmal", "kaum", "nicht"];
+    var untertitelGeholfen = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Inwiefern haben dir die Untertitel geholfen, die Geschichte zu verstehen?</h2>',
+                name: 'geholfen',
+                labels: geholfen,
+                required: true
+            },
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.untertitelGeholfen = jsonData.geholfen;
+            data.untertitelGeholfenValue = geholfen[jsonData.geholfen];
+        },
+        button_label: 'prochain >',
+    };
+    var bildGeholfen = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Inwiefern haben dir die Bilder geholfen, die Geschichte zu verstehen?</h2>',
+                name: 'geholfen',
+                labels: geholfen,
+                required: true
+            },
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.bildGeholfen = jsonData.geholfen;
+            data.bildGeholfenValue = geholfen[jsonData.geholfen];
+        },
+        button_label: 'prochain >',
+    };
+    var diskussionsfragenGeholfen = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Inwiefern haben dir die Diskussionsfragen geholfen, die Geschichte zu verstehen?</h2>',
+                name: 'geholfen',
+                labels: geholfen,
+                required: true
+            },
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.diskussionsfragenGeholfen = jsonData.geholfen;
+            data.diskussionsfragenGeholfenValue = geholfen[jsonData.geholfen];
+        },
+        button_label: 'prochain >',
+    };
+
+    var fortschritte = {
+        type: 'survey-multi-select',
+        questions: [
+            {
+                prompt: "<h2>In welchen Bereichen hast du dank dem Film Fortschritte gemacht (mehrere Antworten möglich)?<h2>",
+                options: ["Verständnis", "Aussprache", "Wortschatz", "Grammatik"],
+                horizontal: true,
+                required: true,
+                name: 'fortschritte'
+            }
+        ],
+    };
+
+    var uebungBevorfragenGeholfen = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Inwiefern hat dir die Übung VOR dem Film geholfen, neue Wörter zu lernen?</h2>',
+                name: 'geholfen',
+                labels: geholfen,
+                required: true
+            },
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.uebungBevorGeholfen = jsonData.geholfen;
+            data.uebungBevorGeholfenValue = geholfen[jsonData.geholfen];
+        },
+        button_label: 'prochain >',
+    };
+    var uebungNachherfragenGeholfen = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Inwiefern hat dir die Übung NACH dem Film geholfen, neue Wörter zu lernen?</h2>',
+                name: 'geholfen',
+                labels: geholfen,
+                required: true
+            },
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.uebungNachherGeholfen = jsonData.geholfen;
+            data.uebungNachherGeholfenValue = geholfen[jsonData.geholfen];
+        },
+        button_label: 'prochain >',
+    };
+
+    var neuGelernt = {
+        type: 'survey-text',
+        questions: [
+            {
+                prompt: '<h2>Welche Wörter hast du neu dazu gelernt oder durch den Film besser verstanden?</h2> Zähle möglichst viele auf (Rechtschreibung wird nicht beachtet).',
+                columns: 150,
+                required: true,
+                name: 'neuGelernt'
+            }
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.neuGelernt = jsonData.neuGelernt;
+        },
+        button_label: 'prochain >',
+    };
+    var warumGelernt = {
+        type: 'survey-text',
+        questions: [
+            {
+                prompt: '<h2>Warum konntest du dir diese Wörter besonders gut merken?</h2>',
+                columns: 150,
+                required: true,
+                name: 'warumGelernt'
+            }
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.warumGelernt = jsonData.warumGelernt;
+        },
+        button_label: 'prochain >',
+    };
+
     var filmFranzoesischZukunftOptions = ["nein", "eher nein", "vielleicht", "eher ja", "ja"];
+    var filmPlanCoeurFranzoesischZukunft = {
+        type: 'survey-likert',
+        questions: [
+            {
+                prompt: '<h2>Wirst du die Serie Plan Coeur zuhause weiter schauen?</h2>',
+                name: 'avenirPlanCoeur',
+                labels: filmFranzoesischZukunftOptions,
+                required: true
+            },
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.avenirPlanCoeur = jsonData.avenirPlanCoeur;
+            data.avenirPlanCoeurValue = filmFranzoesischZukunftOptions[jsonData.avenirPlanCoeur];
+        },
+        button_label: 'prochain >',
+    };
+
     var filmFranzoesischZukunft = {
         type: 'survey-likert',
         questions: [
             {
-                prompt: '<h2>Wirst du zukünftig in der ab und zu Freizeit Serien/TV auf FRANZÖSISCH schauen?</h2>',
+                prompt: '<h2>Wirst du zukünftig in der Freizeit ab und zu Serien/TV auf FRANZÖSISCH schauen?</h2>',
                 name: 'avenirFilm',
                 labels: filmFranzoesischZukunftOptions,
                 required: true
@@ -94,12 +300,48 @@
         button_label: 'prochain >',
     };
 
+    var kommentar = {
+        type: 'survey-text',
+        questions: [
+            {
+                prompt: '<h2>Hast du noch weitere Bemerkungen? Dann notiere sie hier.</h2>',
+                columns: 150,
+                required: false,
+                name: 'kommentar'
+            }
+        ],
+        on_finish: function (data) {
+            var jsonData = JSON.parse(data.responses);
+            data.kommentar = jsonData.kommentar;
+        },
+        button_label: 'Merci beaucoup 😀 >',
+    };
+
     // LEA ENDE
 
 
     jsPsych.init({
         //LEA START
-        timeline: [einleitungQ2, nameklasse, einleitungfragen, filmGefallen, filmVerstanden, filmFranzoesischZukunft],
+        timeline: [einleitungQ2,
+            nameklasse,
+            einleitungfragen,
+            filmGefallen,
+            gutGefallen,
+            wenigGefallen,
+            filmVerstanden,
+            untertitelGelesen,
+            untertitelGeholfen,
+            bildGeholfen,
+            diskussionsfragenGeholfen,
+            fortschritte,
+            uebungBevorfragenGeholfen,
+            uebungNachherfragenGeholfen,
+            neuGelernt,
+            warumGelernt,
+            filmPlanCoeurFranzoesischZukunft,
+            filmFranzoesischZukunft,
+            kommentar],
+
         //LEA ENDE
         on_finish: function () {
             sendData("Q2", jsPsych.data.get().json(true));
