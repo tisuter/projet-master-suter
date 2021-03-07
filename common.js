@@ -10,7 +10,7 @@ var responseAllowedWhilePlaying = getParamOrElse('wait', false)
 var einleitung = {
     type: 'instructions',
     pages: function () {
-        return ['<h2>Bonjour! Hier bist du richtig bei Gruppe ' + group + '. Wenn du bereit bist, drücke weiter (prochain).</h2>'];
+        return ['<h2>Bonjour! Hier bist du richtig bei der Klasse ' + klasse + '. Falls das stimmt, drücke weiter (prochain). Ansonsten kannst du <a href="index.html">zurück zum Start</a>.</h2>'];
     },
     show_clickable_nav: true,
     button_label_next: 'prochain',
@@ -31,7 +31,8 @@ var nameklasse = {
             prompt: 'Klasse',
             columns: 2,
             name: 'classeEleve',
-            required: true
+            required: true,
+            placeholder: klasse
         }
     ],
     on_finish: function(data){
