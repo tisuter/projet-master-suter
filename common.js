@@ -44,40 +44,6 @@ var nameklasse = {
     button_label: 'prochain >',
 };
 
-var nameklasseAlter = {
-    type: 'survey-text',
-    questions: [
-        {
-            prompt: '<h2>Bitte gib deinen Namen, deine Klasse und dein Alter an.</h2>' +
-                '<p> Hinweis: Bitte gib deinen Namen so an: erste zwei Buchstaben deines Vornamens, erste zwei Buchstaben deines Nachnamens, also so: Anna Roggo = AnRo</p>',
-            columns: 4,
-            required: true,
-            name: 'nomEleve'
-        },
-        {
-            prompt: 'Klasse',
-            columns: 2,
-            name: 'classeEleve',
-            required: true,
-            placeholder: klasse
-        },
-        {
-            prompt: 'Alter',
-            columns: 2,
-            name: 'age',
-            required: true
-        }
-    ],
-    on_finish: function(data){
-        var jsonData = JSON.parse(data.responses);
-        data.nomEleve = jsonData.nomEleve;
-        data.classeEleve = jsonData.classeEleve;
-        data.age = jsonData.age;
-        return;
-    },
-    button_label: 'prochain >',
-};
-
 var schlusssatzUebung = {
     type: 'instructions',
     pages: ['<h2>Merci beaucoup! Du hast die Übungen erfolgreich abgeschlossen. Klicke nun auf beenden (terminer).<h2>'],
